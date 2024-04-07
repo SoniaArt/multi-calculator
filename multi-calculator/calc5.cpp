@@ -106,13 +106,12 @@ void calc5() {
                 << "3. Мат. ожидание для дискретного распределения величин\n0. Вернуться в предыдущее меню\n";
             cin >> choice;
             switch (choice) {
-                case 1: system("cls"); probabilityMN(); break;
-                case 2: system("cls"); dispersion(); break;
-                case 3: system("cls");  expectedVal(); break;
+                case 1: system("cls"); probabilityMN(); cout << "\n\n"; break;
+                case 2: system("cls"); dispersion(); cout << "\n\n"; break;
+                case 3: system("cls");  expectedVal(); cout << "\n\n"; break;
                 case 0: system("cls"); break;
                 default: cout << "Некорректное значение. Попробуйте снова.\n";
             }
-            cout << "\n\n";
         } while (choice != 0);
     }
 }
