@@ -97,9 +97,9 @@ void expectedVal() {
 }
 
 
-int calc5() {
+void calc5() {
     {
-        setlocale(LC_ALL, "rus");
+        setlocale(LC_ALL, "Rus");
         int choice = 0;
         do {
             cout << "Выберите необходимую задачу:\n1. Вероятность m/n\n2. Дисперсия для дискретного распределения величин\n"
