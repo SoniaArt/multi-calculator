@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <stdbool.h>
 #include <string.h>
 #include <locale.h>
@@ -7,7 +7,7 @@
 #define MAX 1000
 #define MAXDIGIT 100
 
-// Вывод массива
+// Р’С‹РІРѕРґ РјР°СЃСЃРёРІР°
 void PrintArray(int* arr, int num)
 {
     for (int i = num - 1; i >= 0; i--)
@@ -17,7 +17,7 @@ void PrintArray(int* arr, int num)
     printf("\n");
 }
 
-// Умножение
+// РЈРјРЅРѕР¶РµРЅРёРµ
 void Multiply(int* result, int& num, int n)
 {
     int c = 0;
@@ -42,7 +42,7 @@ void Multiply(int* result, int& num, int n)
     }
 }
 
-// Деление
+// Р”РµР»РµРЅРёРµ
 void Divide(int* result, int& num, int n)
 {
     int c = 0;
@@ -58,7 +58,7 @@ void Divide(int* result, int& num, int n)
     }
 }
 
-// Размещения с повторениями реализация
+// Р Р°Р·РјРµС‰РµРЅРёСЏ СЃ РїРѕРІС‚РѕСЂРµРЅРёСЏРјРё СЂРµР°Р»РёР·Р°С†РёСЏ
 void PlacementsWithRepFunc(int n, int k)
 {
     int* result = new int[MAX];
@@ -70,14 +70,14 @@ void PlacementsWithRepFunc(int n, int k)
         Multiply(result, num, n);
     }
 
-    printf("Размещения с повторениями: ");
+    printf("Р Р°Р·РјРµС‰РµРЅРёСЏ СЃ РїРѕРІС‚РѕСЂРµРЅРёСЏРјРё: ");
     PrintArray(result, num);
     printf("\n");
 
     delete[] result;
 }
 
-// Размещения без повторений реализация
+// Р Р°Р·РјРµС‰РµРЅРёСЏ Р±РµР· РїРѕРІС‚РѕСЂРµРЅРёР№ СЂРµР°Р»РёР·Р°С†РёСЏ
 void PlacementsWithoutRepFunc(int n, int k)
 {
     int* result = new int[MAX];
@@ -89,14 +89,14 @@ void PlacementsWithoutRepFunc(int n, int k)
         Multiply(result, num, i);
     }
 
-    printf("Размещения без повторений: ");
+    printf("Р Р°Р·РјРµС‰РµРЅРёСЏ Р±РµР· РїРѕРІС‚РѕСЂРµРЅРёР№: ");
     PrintArray(result, num);
     printf("\n");
 
     delete[] result;
 }
 
-// Сочетания с повторениями реализация
+// РЎРѕС‡РµС‚Р°РЅРёСЏ СЃ РїРѕРІС‚РѕСЂРµРЅРёСЏРјРё СЂРµР°Р»РёР·Р°С†РёСЏ
 void CombinationsWithRepFunc(int n, int k)
 {
     int* result = new int[MAX];
@@ -118,14 +118,14 @@ void CombinationsWithRepFunc(int n, int k)
         Divide(result, num, i);
     }
 
-    printf("Сочетания с повторениями: ");
+    printf("РЎРѕС‡РµС‚Р°РЅРёСЏ СЃ РїРѕРІС‚РѕСЂРµРЅРёСЏРјРё: ");
     PrintArray(result, num);
     printf("\n");
 
     delete[] result;
 }
 
-// Сочетания без повторений реализация
+// РЎРѕС‡РµС‚Р°РЅРёСЏ Р±РµР· РїРѕРІС‚РѕСЂРµРЅРёР№ СЂРµР°Р»РёР·Р°С†РёСЏ
 void CombinationsWithoutRepFunc(int n, int k)
 {
     int* result = new int[MAX];
@@ -142,13 +142,13 @@ void CombinationsWithoutRepFunc(int n, int k)
         Divide(result, num, i);
     }
 
-    printf("Сочетания без повторений: ");
+    printf("РЎРѕС‡РµС‚Р°РЅРёСЏ Р±РµР· РїРѕРІС‚РѕСЂРµРЅРёР№: ");
     PrintArray(result, num);
     printf("\n");
     delete[] result;
 }
 
-// Перестановки реализация
+// РџРµСЂРµСЃС‚Р°РЅРѕРІРєРё СЂРµР°Р»РёР·Р°С†РёСЏ
 void PermutationsFunc(int n)
 {
     int* result = new int[MAX];
@@ -160,107 +160,107 @@ void PermutationsFunc(int n)
         Multiply(result, num, i);
     }
 
-    printf("Количество перестановок: ");
+    printf("РљРѕР»РёС‡РµСЃС‚РІРѕ РїРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: ");
     PrintArray(result, num);
     printf("\n");
     delete[] result;
 }
 
-// Размещения с повторениями
+// Р Р°Р·РјРµС‰РµРЅРёСЏ СЃ РїРѕРІС‚РѕСЂРµРЅРёСЏРјРё
 void PlacementsWithRep()
 {
     int n, k;
     do
     {
-        printf("Введите количество элементов (n): ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (n): ");
         scanf_s("%d", &n);
 
-        printf("Введите количество элементов (k): ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (k): ");
         scanf_s("%d", &k);
 
         if ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k))
         {
-            printf("Слишком большие числа. Введите числа из интервала [1;100], где n > k!\n");
+            printf("РЎР»РёС€РєРѕРј Р±РѕР»СЊС€РёРµ С‡РёСЃР»Р°. Р’РІРµРґРёС‚Рµ С‡РёСЃР»Р° РёР· РёРЅС‚РµСЂРІР°Р»Р° [1;100], РіРґРµ n > k!\n");
             getchar();
         }
     } while ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k));
     PlacementsWithRepFunc(n, k);
 }
 
-// Размещения без повторений
+// Р Р°Р·РјРµС‰РµРЅРёСЏ Р±РµР· РїРѕРІС‚РѕСЂРµРЅРёР№
 void PlacementsWithoutRep()
 {
     int n, k;
     do
     {
-        printf("Введите количество элементов (n): ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (n): ");
         scanf_s("%d", &n);
 
-        printf("Введите количество элементов (k): ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (k): ");
         scanf_s("%d", &k);
 
         if ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k))
         {
-            printf("Слишком большие числа. Введите числа из интервала [1;100], где n > k!\n");
+            printf("РЎР»РёС€РєРѕРј Р±РѕР»СЊС€РёРµ С‡РёСЃР»Р°. Р’РІРµРґРёС‚Рµ С‡РёСЃР»Р° РёР· РёРЅС‚РµСЂРІР°Р»Р° [1;100], РіРґРµ n > k!\n");
             getchar();
         }
     } while ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k));
     PlacementsWithoutRepFunc(n, k);
 }
 
-// Сочетания с повторениями
+// РЎРѕС‡РµС‚Р°РЅРёСЏ СЃ РїРѕРІС‚РѕСЂРµРЅРёСЏРјРё
 void CombinationsWithRep()
 {
     int n, k;
     do
     {
-        printf("Введите количество элементов (n): ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (n): ");
         scanf_s("%d", &n);
 
-        printf("Введите количество элементов (k): ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (k): ");
         scanf_s("%d", &k);
 
         if ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k))
         {
-            printf("Слишком большие числа. Введите числа из интервала [1;100], где n > k!\n");
+            printf("РЎР»РёС€РєРѕРј Р±РѕР»СЊС€РёРµ С‡РёСЃР»Р°. Р’РІРµРґРёС‚Рµ С‡РёСЃР»Р° РёР· РёРЅС‚РµСЂРІР°Р»Р° [1;100], РіРґРµ n > k!\n");
             getchar();
         }
     } while ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k));
     CombinationsWithRepFunc(n, k);
 }
 
-// Сочетания без повторений
+// РЎРѕС‡РµС‚Р°РЅРёСЏ Р±РµР· РїРѕРІС‚РѕСЂРµРЅРёР№
 void CombinationsWithoutRep()
 {
     int n, k;
     do
     {
-        printf("Введите количество элементов (n): ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (n): ");
         scanf_s("%d", &n);
 
-        printf("Введите количество элементов (k): ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (k): ");
         scanf_s("%d", &k);
 
         if ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k))
         {
-            printf("Слишком большие числа. Введите числа из интервала [1;100], где n > k!\n");
+            printf("РЎР»РёС€РєРѕРј Р±РѕР»СЊС€РёРµ С‡РёСЃР»Р°. Р’РІРµРґРёС‚Рµ С‡РёСЃР»Р° РёР· РёРЅС‚РµСЂРІР°Р»Р° [1;100], РіРґРµ n > k!\n");
             getchar();
         }
     } while ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k));
     CombinationsWithoutRepFunc(n, k);
 }
 
-// Перестановки
+// РџРµСЂРµСЃС‚Р°РЅРѕРІРєРё
 void Permutations()
 {
     int n;
     do
     {
-        printf("Введите количество элементов (n): ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (n): ");
         scanf_s("%d", &n);
         if (n < 1 || n > MAXDIGIT)
         {
-            printf("Слишком большое число. Введите число из интервала [1;100]!\n");
+            printf("РЎР»РёС€РєРѕРј Р±РѕР»СЊС€РѕРµ С‡РёСЃР»Рѕ. Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РёР· РёРЅС‚РµСЂРІР°Р»Р° [1;100]!\n");
             getchar();
         }
     } while (n < 1 || n > MAXDIGIT);
@@ -273,22 +273,22 @@ void calc3()
     char selection;
     do
     {
-        printf("Выберите формулу комбинаторики:\n");
-        printf("1.Размещения с повторением\n");
-        printf("2.Размещения без повторений\n");
-        printf("3.Сочетание с повторением\n");
-        printf("4.Сочетание без повторений\n");
-        printf("5.Перестановки\n");
-        printf("Для возврата в главное меню введите 0.\n");
+        printf("Р’С‹Р±РµСЂРёС‚Рµ С„РѕСЂРјСѓР»Сѓ РєРѕРјР±РёРЅР°С‚РѕСЂРёРєРё:\n");
+        printf("1.Р Р°Р·РјРµС‰РµРЅРёСЏ СЃ РїРѕРІС‚РѕСЂРµРЅРёРµРј\n");
+        printf("2.Р Р°Р·РјРµС‰РµРЅРёСЏ Р±РµР· РїРѕРІС‚РѕСЂРµРЅРёР№\n");
+        printf("3.РЎРѕС‡РµС‚Р°РЅРёРµ СЃ РїРѕРІС‚РѕСЂРµРЅРёРµРј\n");
+        printf("4.РЎРѕС‡РµС‚Р°РЅРёРµ Р±РµР· РїРѕРІС‚РѕСЂРµРЅРёР№\n");
+        printf("5.РџРµСЂРµСЃС‚Р°РЅРѕРІРєРё\n");
+        printf("Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0.\n");
 
         do
         {
-            printf("Ваш выбор: ");
+            printf("Р’Р°С€ РІС‹Р±РѕСЂ: ");
             scanf_s(" %c", &selection, 1);
             getchar();
             if (selection < 48 || selection > 54)
             {
-                printf("Некорректный ввод. Повторите попытку\n");
+                printf("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ. РџРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ\n");
                 getchar();
             }
         } while (selection < 48 || selection > 54);
@@ -317,7 +317,7 @@ void calc3()
             Permutations();
             break;
         case 0:
-            printf("Выход\n\n");
+            printf("Р’С‹С…РѕРґ\n\n");
             break;
         }
     } while (selection != 0);
