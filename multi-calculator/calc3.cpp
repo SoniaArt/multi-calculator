@@ -169,103 +169,115 @@ void PermutationsFunc(int n)
 // Размещения с повторениями
 void PlacementsWithRep()
 {
-    int n, k;
+    char n, k;
     do
     {
-        printf("Введите количество элементов (n): ");
-        scanf_s("%d", &n);
+        printf("Введите количество элементов (число n из интервала [1,100]): ");
+        scanf_s(" %c", &n, 1);
+        getchar();
 
-        printf("Введите количество элементов (k): ");
-        scanf_s("%d", &k);
+        printf("Введите количество элементов (число k из интервала [1,100]): ");
+        scanf_s(" %c", &k, 1);
+        getchar();
 
-        if ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k))
+        if (((n - '0') < 1 || (n - '0') > MAXDIGIT) || ((k - '0') < 1 || (k - '0') > MAXDIGIT) || ((n - '0') < (k - '0')) || n < 48 || n > 57 || k < 48 || k > 57)
         {
-            printf("Слишком большие числа. Введите числа из интервала [1;100], где n > k!\n");
-            getchar();
+            printf("Некорректный ввод. Повторите попытку!\n");
         }
-    } while ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k));
-    PlacementsWithRepFunc(n, k);
+    } while (((n - '0') < 1 || (n - '0') > MAXDIGIT) || ((k - '0') < 1 || (k - '0') > MAXDIGIT) || ((n - '0') < (k - '0')) || n < 48 || n > 57 || k < 48 || k > 57);
+    int digit1 = n - '0';
+    int digit2 = k - '0';
+    PlacementsWithRepFunc(digit1, digit2);
 }
 
 // Размещения без повторений
 void PlacementsWithoutRep()
 {
-    int n, k;
+    char n, k;
     do
     {
-        printf("Введите количество элементов (n): ");
-        scanf_s("%d", &n);
+        printf("Введите количество элементов (число n из интервала [1,100]): ");
+        scanf_s(" %c", &n, 1);
+        getchar();
 
-        printf("Введите количество элементов (k): ");
-        scanf_s("%d", &k);
+        printf("Введите количество элементов (число k из интервала [1,100]): ");
+        scanf_s(" %c", &k, 1);
+        getchar();
 
-        if ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k))
+        if (((n - '0') < 1 || (n - '0') > MAXDIGIT) || ((k - '0') < 1 || (k - '0') > MAXDIGIT) || ((n - '0') < (k - '0')) || n < 48 || n > 57 || k < 48 || k > 57)
         {
-            printf("Слишком большие числа. Введите числа из интервала [1;100], где n > k!\n");
-            getchar();
+            printf("Некорректный ввод. Повторите попытку!\n");
         }
-    } while ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k));
-    PlacementsWithoutRepFunc(n, k);
+    } while (((n - '0') < 1 || (n - '0') > MAXDIGIT) || ((k - '0') < 1 || (k - '0') > MAXDIGIT) || ((n - '0') < (k - '0')) || n < 48 || n > 57 || k < 48 || k > 57);
+    int digit1 = n - '0';
+    int digit2 = k - '0';
+    PlacementsWithoutRepFunc(digit1, digit2);
 }
 
 // Сочетания с повторениями
 void CombinationsWithRep()
 {
-    int n, k;
+    char n, k;
     do
     {
-        printf("Введите количество элементов (n): ");
-        scanf_s("%d", &n);
+        printf("Введите количество элементов (число n из интервала [1,100]): ");
+        scanf_s(" %c", &n, 1);
+        getchar();
 
-        printf("Введите количество элементов (k): ");
-        scanf_s("%d", &k);
+        printf("Введите количество элементов (число k из интервала [1,100]): ");
+        scanf_s(" %c", &k, 1);
+        getchar();
 
-        if ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k))
+        if (((n - '0') < 1 || (n - '0') > MAXDIGIT) || ((k - '0') < 1 || (k - '0') > MAXDIGIT) || ((n - '0') < (k - '0')) || n < 48 || n > 57 || k < 48 || k > 57)
         {
-            printf("Слишком большие числа. Введите числа из интервала [1;100], где n > k!\n");
-            getchar();
+            printf("Некорректный ввод. Повторите попытку!\n");
         }
-    } while ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k));
-    CombinationsWithRepFunc(n, k);
+    } while (((n - '0') < 1 || (n - '0') > MAXDIGIT) || ((k - '0') < 1 || (k - '0') > MAXDIGIT) || ((n - '0') < (k - '0')) || n < 48 || n > 57 || k < 48 || k > 57);
+    int digit1 = n - '0';
+    int digit2 = k - '0';
+    CombinationsWithRepFunc(digit1, digit2);
 }
 
 // Сочетания без повторений
 void CombinationsWithoutRep()
 {
-    int n, k;
+    char n, k;
     do
     {
-        printf("Введите количество элементов (n): ");
-        scanf_s("%d", &n);
+        printf("Введите количество элементов (число n из интервала [1,100]): ");
+        scanf_s(" %c", &n, 1);
+        getchar();
 
-        printf("Введите количество элементов (k): ");
-        scanf_s("%d", &k);
+        printf("Введите количество элементов (число k из интервала [1,100]): ");
+        scanf_s(" %c", &k, 1);
+        getchar();
 
-        if ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k))
+        if (((n - '0') < 1 || (n - '0') > MAXDIGIT) || ((k - '0') < 1 || (k - '0') > MAXDIGIT) || ((n - '0') < (k - '0')) || n < 48 || n > 57 || k < 48 || k > 57)
         {
-            printf("Слишком большие числа. Введите числа из интервала [1;100], где n > k!\n");
-            getchar();
+            printf("Некорректный ввод. Повторите попытку!\n");
         }
-    } while ((n < 1 || n > MAXDIGIT) && (k < 1 || k > MAXDIGIT) && (n < k));
-    CombinationsWithoutRepFunc(n, k);
+    } while (((n - '0') < 1 || (n - '0') > MAXDIGIT) || ((k - '0') < 1 || (k - '0') > MAXDIGIT) || ((n - '0') < (k - '0')) || n < 48 || n > 57 || k < 48 || k > 57);
+    int digit1 = n - '0';
+    int digit2 = k - '0';
+    CombinationsWithoutRepFunc(digit1, digit2);
 }
 
 // Перестановки
 void Permutations()
 {
-    int n;
+    char n;
     do
     {
-        printf("Введите количество элементов (n): ");
-        scanf_s("%d", &n);
-        if (n < 1 || n > MAXDIGIT)
+        printf("Введите количество элементов (число n из интервала [1,100]): ");
+        scanf_s(" %c", &n, 1);
+        getchar();
+        if ((n - '0') < 1 || (n - '0') > MAXDIGIT || n < 48 || n > 57)
         {
-            printf("Слишком большое число. Введите число из интервала [1;100]!\n");
-            getchar();
+            printf("Некорректный ввод. Повторите попытку!\n");
         }
-    } while (n < 1 || n > MAXDIGIT);
-
-    PermutationsFunc(n);
+    } while ((n - '0') < 1 || (n - '0') > MAXDIGIT || n < 48 || n > 57);
+    int digit = n - '0';
+    PermutationsFunc(digit);
 }
 
 void calc3()
@@ -289,7 +301,6 @@ void calc3()
             if (selection < 48 || selection > 54)
             {
                 printf("Некорректный ввод. Повторите попытку\n");
-                getchar();
             }
         } while (selection < 48 || selection > 54);
         selection = selection - '0';
