@@ -79,33 +79,39 @@ void calc2() {
 			printf("Ваш выбор: "); scanf_s("%c", &oper); getchar();
 			if (oper < 48 || oper > 55) { printf("Некорректный ввод. Повторите попытку\n"); }
 		} while (oper < 48 || oper > 55);
+
 		struct fraction fr1, fr2, res;
 		int len1, len2;
 		char str1[MaxN], str2[MaxN];
 		char str_num1[MaxN], str_den1[MaxN], str_num2[MaxN], str_den2[MaxN];
-		do {
-			if (oper > 48 && oper < 54) { printf("Введите 1-ую дробь: "); }
-			else { printf("Введите дробь: "); }
-			gets_s(str1);
-			len1 = strlen(str1);
-			input(str1, len1, str_num1, str_den1);
-			fr1.num = atoi(str_num1);
-			fr1.den = atoi(str_den1);
-			if (check(str1, len1) == 1) { printf("Некорректный ввод дроби.\n"); }
-			else if (fr1.den == 0) { printf("Знаменатель дроби не может быть равен нулю.\n"); }
-		} while ((fr1.den == 0) || (check(str1, len1) == 1));
-		if (oper > 48 && oper < 54) {
+
+		if (oper != '0')
+		{
 			do {
-				printf("Введите 2-ую дробь: ");
-				gets_s(str2);
-				len2 = strlen(str2);
-				input(str2, len2, str_num2, str_den2);
-				fr2.num = atoi(str_num2);
-				fr2.den = atoi(str_den2);
-				if (check(str2, len2) == 1) { printf("Некорректный ввод дроби.\n"); }
-				else if (fr2.den == 0) { printf("Знаменатель дроби не может быть равен нулю.\n"); }
-			} while ((fr2.den == 0) || (check(str2, len2) == 1));
+				if (oper > 48 && oper < 54) { printf("Введите 1-ую дробь: "); }
+				else { printf("Введите дробь: "); }
+				gets_s(str1);
+				len1 = strlen(str1);
+				input(str1, len1, str_num1, str_den1);
+				fr1.num = atoi(str_num1);
+				fr1.den = atoi(str_den1);
+				if (check(str1, len1) == 1) { printf("Некорректный ввод дроби.\n"); }
+				else if (fr1.den == 0) { printf("Знаменатель дроби не может быть равен нулю.\n"); }
+			} while ((fr1.den == 0) || (check(str1, len1) == 1));
+			if (oper > 48 && oper < 54) {
+				do {
+					printf("Введите 2-ую дробь: ");
+					gets_s(str2);
+					len2 = strlen(str2);
+					input(str2, len2, str_num2, str_den2);
+					fr2.num = atoi(str_num2);
+					fr2.den = atoi(str_den2);
+					if (check(str2, len2) == 1) { printf("Некорректный ввод дроби.\n"); }
+					else if (fr2.den == 0) { printf("Знаменатель дроби не может быть равен нулю.\n"); }
+				} while ((fr2.den == 0) || (check(str2, len2) == 1));
+			}
 		}
+		
 		switch (oper) {
 		case '1':
 			res.den = NOK(fr1.den, fr2.den);
