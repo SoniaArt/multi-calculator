@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <stdbool.h>
 #include <string.h>
@@ -5,7 +6,6 @@
 #include "Header6.h"
 #include <stdio.h>
 #include <math.h>
-#define _CRT_SECURE_NO_WARNINGS
 //                                ,                                          
 int flag;
 int prg=0;//             
