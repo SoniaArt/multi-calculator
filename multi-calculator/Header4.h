@@ -12,3 +12,4 @@ void Minus_coefficients(char coefficients1[], char coefficients2[], int degree1,
 void Umn(char coefficients1[], char coefficients2[], int degree1, int degree2, char coefficients_new[], int* degree3);
 void Umn_count(char coefficients1[], int degree1, char coefficients_new[], int a);
 void Proizv(char coefficients1[], int degree1, char coefficients_new[], int* degree3);
+void Del(char coefficients1[], char coefficients2[], char quotient[], char remainder[], int degree1, int degree2);
