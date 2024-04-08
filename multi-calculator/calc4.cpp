@@ -66,7 +66,7 @@ void Print(char coefficients[], int degree)
 					printf("%d", coefficients[i]);
 				}
 				else if (degree == 1) {
-					if (coefficients[i] = 1) {
+					if (coefficients[i] == 1) {
 						printf("x");
 					}
 					else {
@@ -74,7 +74,7 @@ void Print(char coefficients[], int degree)
 					}
 				}
 				else {
-					if (coefficients[i] = 1) {
+					if (coefficients[i] == 1) {
 						printf("x^%d", i);
 					}
 					else {
@@ -90,7 +90,7 @@ void Print(char coefficients[], int degree)
 						printf("+%d", coefficients[i]);
 					}
 					else if (i == 1) {
-						if (coefficients[i] = 1) {
+						if (coefficients[i] == 1) {
 							printf("+x");
 						}
 						else {
@@ -98,7 +98,7 @@ void Print(char coefficients[], int degree)
 						}
 					}
 					else {
-						if (coefficients[i] = 1) {
+						if (coefficients[i] == 1) {
 							printf("+x^%d", i);
 						}
 						else {
@@ -112,7 +112,7 @@ void Print(char coefficients[], int degree)
 						printf("%d", coefficients[i]);
 					}
 					else if (i == 1) {
-						if (coefficients[i] = -1)
+						if (coefficients[i] == -1)
 						{
 							printf("-x");
 						}
@@ -121,7 +121,7 @@ void Print(char coefficients[], int degree)
 						}
 					}
 					else {
-						if (coefficients[i] = -1) {
+						if (coefficients[i] == -1) {
 							printf("-x^%d", i);
 						}
 						else {
@@ -332,5 +332,5 @@ void calc4()
 			break;
 		default: printf("error\n");
 		}
-	} while (0 >= ch || ch > 6);
+	} while (ch!=0);
 }
