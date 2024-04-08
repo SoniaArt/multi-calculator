@@ -6,10 +6,10 @@
 #include "Header6.h"
 #include <stdio.h>
 #include <math.h>
-//РІС‹РЅРµСЃС‚Рё РѕС‚РґРµР»СЊРЅРѕ РІРІРѕРґ РїР°СЂР°РјРµС‚СЂРѕРІ, С‡С‚РѕР±С‹ РЅРµ РЅСѓР¶РЅРѕ Р±С‹Р»Рѕ РёС… РІРІРѕРґРёС‚СЊ РєР°Р¶РґС‹Р№ СЂР°Р·
+//вынести отдельно ввод параметров, чтобы не нужно было их вводить каждый раз
 int flag;
-int prg=0;//РІС‹Р±РѕСЂ С„СѓРЅРєС†РёРё
-double A, B;//РіСЂР°РЅРёС†С‹ РѕС‚СЂРµР·РєР°
+int prg=0;//выбор функции
+double A, B;//границы отрезка
 double power_function(double x, double a, double b, double c, double d){
    double y;
 
@@ -67,51 +67,51 @@ double f_choose(double x, double a, double b, double c, double d, int prg){
    return y;
 }
 
-void section(void){//РѕС‚СЂРµР·РѕРє СЂР°Р±РѕС‚С‹
+void section(void){//отрезок работы
     do{
-        printf("Р’РІРµРґРёС‚Рµ РєСЂР°Р№РЅРёРµ С‚РѕС‡РєРё РѕС‚СЂРµР·РєР°: ");scanf("%lf %lf", &A, &B);
+        printf("Введите крайние точки отрезка: ");scanf("%lf %lf", &A, &B);
         if (A>B){
             int n;
             n=A; A=B; B=n;
         }
         if (A>=B-0.01){
-            printf("РЎР»РёС€РєРѕРј Р±Р»РёР·РєРёРµ Р·РЅР°С‡РµРЅРёСЏ, РїРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°");
+            printf("Слишком близкие значения, попробуйте снова");
         }
     }while (A>B-0.01);
 }
 
 void extreme(int prg){
-   section();//РѕС‚СЂРµР·РѕРє РІС‹Р±СЂР°РЅ
+   section();//отрезок выбран
    int count=0;
    double a=0,b=0,c = 0,d=0;
    if (prg!=2){
-      printf("Р’РІРµРґРёС‚Рµ Р°: ");scanf("%lf", &a);
-      printf("Р’РІРµРґРёС‚Рµ b: ");scanf("%lf", &b);
-      printf("Р’РІРµРґРёС‚Рµ c: ");scanf("%lf", &c);
+      printf("Введите а: ");scanf("%lf", &a);
+      printf("Введите b: ");scanf("%lf", &b);
+      printf("Введите c: ");scanf("%lf", &c);
       if (prg==3 || prg==5 || prg==6){
-         printf("Р’РІРµРґРёС‚Рµ d: ");scanf("%lf", &d);
+         printf("Введите d: ");scanf("%lf", &d);
       }
-      printf("Р­РєСЃС‚СЂРµРјСѓРјС‹: ");
+      printf("Экстремумы: ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if ((f_choose(i-0.01,a,b,c,d, prg)>f_choose(i,a,b,c,d,prg) && f_choose(i+0.01,a,b,c,d,prg)>f_choose(i,a,b,c,d,prg))||(f_choose(i-0.01,a,b,c,d,prg)<f_choose(i,a,b,c,d,prg) && f_choose(i+0.01,a,b,c,d,prg)<f_choose(i,a,b,c,d,prg))){ printf("%lf ",f_choose(i,a,b,c,d,prg)); count++;}
       }printf("\n");
       if (count==0){
-         printf("Р­РєСЃСЂРµРјСѓРјРѕРІ РЅРµС‚\n");
+         printf("Эксремумов нет\n");
       }
    }
    else{
       double parameters[100];
       int k;
-      printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»Р°РіР°РµРјС‹С…: ");scanf("%d", &k);
+      printf("Введите количество слагаемых: ");scanf("%d", &k);
       for (int j=0; j<k; j++){
-         printf("Р’РІРµРґРёС‚Рµ %d РїР°СЂР°РјРµС‚СЂ: ", j+1); scanf("%lf", &parameters[j]);
+         printf("Введите %d параметр: ", j+1); scanf("%lf", &parameters[j]);
       }
-      printf("Р­РєСЃС‚СЂРµРјСѓРјС‹: ");
+      printf("Экстремумы: ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if ((polynomial(i-0.01, parameters,k)>polynomial(i,parameters,k) && polynomial(i+0.01, parameters,k)>polynomial(i, parameters,k))||((polynomial(i-0.01, parameters,k))<polynomial(i, parameters,k) && polynomial(i+0.01, parameters,k)<polynomial(i, parameters,k))){ printf("%lf ",polynomial(i, parameters,k)); count++;}
       }printf("\n");
       if (count==0){
-         printf("Р­РєСЃСЂРµРјСѓРјРѕРІ РЅРµС‚\n");
+         printf("Эксремумов нет\n");
       }
       
    }
@@ -120,54 +120,54 @@ void extreme(int prg){
 
 
 void root(int prg){
-   section();//РѕС‚СЂРµР·РѕРє РІС‹Р±СЂР°РЅ
+   section();//отрезок выбран
    int count=0;
    double a=0,b=0,c = 0,d=0;
-   if (prg!=2){//РїРµСЂРµРјРµРЅРЅС‹Рµ
-      printf("Р’РІРµРґРёС‚Рµ Р°: ");scanf("%lf", &a);
-      printf("Р’РІРµРґРёС‚Рµ b: ");scanf("%lf", &b);
-      printf("Р’РІРµРґРёС‚Рµ c: ");scanf("%lf", &c);
+   if (prg!=2){//переменные
+      printf("Введите а: ");scanf("%lf", &a);
+      printf("Введите b: ");scanf("%lf", &b);
+      printf("Введите c: ");scanf("%lf", &c);
       if (prg==3 || prg==5 || prg==6){
-         printf("Р’РІРµРґРёС‚Рµ d: ");scanf("%lf", &d);
+         printf("Введите d: ");scanf("%lf", &d);
       }
-      printf("РљРѕСЂРЅРё: ");
+      printf("Корни: ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if (fabs(f_choose(i,a,b,c,d, prg))<=0.001){ printf("%lf ",i); count++;}
       }printf("\n");
       if (count==0){
-         printf("РљРѕСЂРЅРµР№ РЅРµС‚\n");
+         printf("Корней нет\n");
       }
    }
    else{
       double parameters[100];
       int k;
-      printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»Р°РіР°РµРјС‹С…: ");scanf("%d", &k);
+      printf("Введите количество слагаемых: ");scanf("%d", &k);
       for (int j=0; j<k; j++){
-         printf("Р’РІРµРґРёС‚Рµ %d РїР°СЂР°РјРµС‚СЂ: ", j+1); scanf("%lf", &parameters[j]);
+         printf("Введите %d параметр: ", j+1); scanf("%lf", &parameters[j]);
       }
-      printf("РљРѕСЂРЅРё: ");
+      printf("Корни: ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if (fabs(polynomial(i, parameters,k))<=0.0001){ printf("%lf ",polynomial(i, parameters,k)); count++;}
       }printf("\n");
       if (count==0){
-         printf("РљРѕСЂРЅРµР№ РЅРµС‚\n");
+         printf("Корней нет\n");
       }
       
    }
 }
 void integral(int prg){
-   section();//РѕС‚СЂРµР·РѕРє РІС‹Р±СЂР°РЅ
+   section();//отрезок выбран
    int count=0;
-   double s=0;//gР»РѕС‰Р°РґСЊ С„РёРіСѓСЂС‹
+   double s=0;//gлощадь фигуры
    double a=0,b=0,c = 0,d=0;
-   if (prg!=2){//РїРµСЂРµРјРµРЅРЅС‹Рµ
-      printf("Р’РІРµРґРёС‚Рµ Р°: ");scanf("%lf", &a);
-      printf("Р’РІРµРґРёС‚Рµ b: ");scanf("%lf", &b);
-      printf("Р’РІРµРґРёС‚Рµ c: ");scanf("%lf", &c);
+   if (prg!=2){//переменные
+      printf("Введите а: ");scanf("%lf", &a);
+      printf("Введите b: ");scanf("%lf", &b);
+      printf("Введите c: ");scanf("%lf", &c);
       if (prg==3 || prg==5 || prg==6){
-         printf("Р’РІРµРґРёС‚Рµ d: ");scanf("%lf", &d);
+         printf("Введите d: ");scanf("%lf", &d);
       }
-      printf("РРЅС‚РµРіСЂР°Р»: ");
+      printf("Интеграл: ");
       for (double i=A; i<=B; i+=0.001){
 //         if (f_choose(i,a,b,c,d, prg)!=0)
          {s+=(0.001*0.5*(f_choose(i,a,b,c,d,prg)+f_choose(i+0.001,a,b,c,d,prg))); count++;}
@@ -176,11 +176,11 @@ void integral(int prg){
    else{
       double parameters[100];
       int k;
-      printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»Р°РіР°РµРјС‹С…: ");scanf("%d", &k);
+      printf("Введите количество слагаемых: ");scanf("%d", &k);
       for (int j=0; j<k; j++){
-         printf("Р’РІРµРґРёС‚Рµ %d РїР°СЂР°РјРµС‚СЂ: ", j+1); scanf("%lf", &parameters[j]);
+         printf("Введите %d параметр: ", j+1); scanf("%lf", &parameters[j]);
       }
-      printf("РљРѕСЂРЅРё: ");
+      printf("Корни: ");
       for (double i=A; i<=B; i+=0.001){
          if (polynomial(i, parameters,k)==0){ printf("%lf ",polynomial(i, parameters,k)); count++;}
       }printf("\n");
@@ -200,7 +200,7 @@ void calc6()
    int circle=0;
    do{
       int prg=0;
-      printf("Р’С‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚ С„СѓРЅРєС†РёРё: \n 1) CС‚РµРїРµРЅРЅР°СЏ РІРёРґР° a*x^b+c \n 2) РџРѕР»РёРЅРѕРј СЃС‚РµРїРµРЅРё РІРёРґР°: a0+a1*x+a2*x^2+...+aN*x^N\n 3) РџРѕРєР°Р·Р°С‚РµР»СЊРЅР°СЏ РІРёРґР°: a*b^(c*x)+b\n 4) Р›РѕРіР°СЂРёС„РјРёС‡РµСЃРєР°СЏ РІРёРґР°: a*ln(b*x)+c\n 5) CРёРЅСѓСЃРѕРёРґР° РІРёРґР°: a*sin(b*x+c)+d\n 6) РљРѕСЃРёРЅСѓСЃРѕРёРґР° РІРёРґР°: a*cos(b*x+c)+d \n");
+      printf("Выберите вариант функции: \n 1) Cтепенная вида a*x^b+c \n 2) Полином степени вида: a0+a1*x+a2*x^2+...+aN*x^N\n 3) Показательная вида: a*b^(c*x)+b\n 4) Логарифмическая вида: a*ln(b*x)+c\n 5) Cинусоида вида: a*sin(b*x+c)+d\n 6) Косинусоида вида: a*cos(b*x+c)+d \n");
       do{
          scanf("%d", &prg);
          switch (prg){
@@ -210,20 +210,20 @@ void calc6()
             case 4: flag=4; break;
             case 5: flag=5; break;
             case 6: flag=6; break;
-            default: printf("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅРѕ Р·РЅР°С‡РµРЅРёРµ\n"); break;}
+            default: printf("Неверно введено значение\n"); break;}
       }while (prg!=1 && prg!=2 && prg!=3 && prg!=4 && prg!=5 && prg!=6);
       
       int prg1=0;
-      printf("Р’С‹Р±РµСЂРёС‚Рµ С‚РёРї РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР°: \n 1) РїРѕРёСЃРє СЌРєСЃС‚СЂРµРјСѓРјРѕРІ РЅР° РѕС‚СЂРµР·РєРµ \n 2) РїРѕРёСЃРє РєРѕСЂРЅСЏ 3)РІС‹С‡РёСЃР»РµРЅРёРµ РёРЅС‚РµРіСЂР°Р»Р° \n");
+      printf("Выберите тип калькулятора: \n 1) поиск экстремумов на отрезке \n 2) поиск корня 3)вычисление интеграла \n");
       do{
          scanf("%d", &prg1);
          switch (prg1){
             case 1: extreme(prg); break;
             case 2: root(prg); break;
             case 3: integral(prg); break;
-            default: printf("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅРѕ Р·РЅР°С‡РµРЅРёРµ\n"); break;}
+            default: printf("Неверно введено значение\n"); break;}
       }while (prg1!=1 && prg1!=2 && prg1!=3);
-      printf("0 - РІРµСЂРЅСѓС‚СЊСЃСЏ РІ РјРµРЅСЋ;\nР»СЋР±РѕРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ - РїСЂРѕРґРѕР»Р¶РёС‚СЊ\n");scanf("%d\n", &circle);
+      printf("0 - вернуться в меню;\nлюбое целое число - продолжить\n");scanf("%d\n", &circle);
    }while (circle!=0);
 
 }
