@@ -298,6 +298,7 @@ void calc4()
 		printf("Выберите, какую операцию вы хотите совершить\n");
 		printf("\n 1 - Cложение многочленов\n 2 - Вычитание многочленов\n 3 - Умножение многочленов\n 4 - Умножение многочлена на число\n 5 - Вычисление производной от многочлена\n 6 - Деление многочлена в столбик\n\n");
 		printf("Для возврата в главное меню введите 0.\n");
+		printf("Ваш выбор: ");
 		ch = Inputt();
 		switch (ch)
 		{
@@ -330,6 +331,9 @@ void calc4()
 			input_coefficients(coefficients1, &degree1);
 			input_coefficients(coefficients2, &degree2);
 			Del(coefficients1, coefficients2, quotient, remainder, degree1, degree2);
+			break;
+		case 0:
+			system("cls");
 			break;
 		default: printf("error\n");
 		}
