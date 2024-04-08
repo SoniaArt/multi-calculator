@@ -195,7 +195,8 @@ void integral(int prg){
 
 
 
-int calc6(){
+void calc6()
+{
    int circle=0;
    do{
       int prg=0;
@@ -224,4 +225,5 @@ int calc6(){
       }while (prg1!=1 && prg1!=2 && prg1!=3);
       printf("0 - вернуться в меню;\nлюбое целое число - продолжить\n");scanf("%d\n", &circle);
    }while (circle!=0);
+
 }
