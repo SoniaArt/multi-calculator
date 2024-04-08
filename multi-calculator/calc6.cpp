@@ -5,10 +5,10 @@
 #include "Header6.h"
 #include <stdio.h>
 #include <math.h>
-//вынести отдельно ввод параметров, чтобы не нужно было их вводить каждый раз
+//                                ,                                          
 int flag;
-int prg=0;//выбор функции
-double A, B;//границы отрезка
+int prg=0;//             
+double A, B;//               
 double power_function(double x, double a, double b, double c, double d){
    double y;
 
@@ -66,51 +66,51 @@ double f_choose(double x, double a, double b, double c, double d, int prg){
    return y;
 }
 
-void section(void){//отрезок работы
+void section(void){//              
     do{
-        printf("Введите крайние точки отрезка: ");scanf_s("%lf %lf", &A, &B);
+        printf("                             : ");scanf("%lf %lf", &A, &B);
         if (A>B){
             int n;
             n=A; A=B; B=n;
         }
         if (A>=B-0.01){
-            printf("Слишком близкие значения, попробуйте снова");
+            printf("                        ,                 ");
         }
     }while (A>B-0.01);
 }
 
 void extreme(int prg){
-   section();//отрезок выбран
+   section();//              
    int count=0;
    double a=0,b=0,c = 0,d=0;
    if (prg!=2){
-      printf("Введите а: ");scanf_s("%lf", &a);
-      printf("Введите b: ");scanf_s("%lf", &b);
-      printf("Введите c: ");scanf_s("%lf", &c);
+      printf("         : ");scanf("%lf", &a);
+      printf("        b: ");scanf("%lf", &b);
+      printf("        c: ");scanf("%lf", &c);
       if (prg==3 || prg==5 || prg==6){
-         printf("Введите d: ");scanf_s("%lf", &d);
+         printf("        d: ");scanf("%lf", &d);
       }
-      printf("Экстремумы: ");
+      printf("          : ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if ((f_choose(i-0.01,a,b,c,d, prg)>f_choose(i,a,b,c,d,prg) && f_choose(i+0.01,a,b,c,d,prg)>f_choose(i,a,b,c,d,prg))||(f_choose(i-0.01,a,b,c,d,prg)<f_choose(i,a,b,c,d,prg) && f_choose(i+0.01,a,b,c,d,prg)<f_choose(i,a,b,c,d,prg))){ printf("%lf ",f_choose(i,a,b,c,d,prg)); count++;}
       }printf("\n");
       if (count==0){
-         printf("Эксремумов нет\n");
+         printf("              \n");
       }
    }
    else{
       double parameters[100];
       int k;
-      printf("Введите количество слагаемых: ");scanf_s("%d", &k);
+      printf("                            : ");scanf("%d", &k);
       for (int j=0; j<k; j++){
-         printf("Введите %d параметр: ", j+1); scanf_s("%lf", &parameters[j]);
+         printf("        %d         : ", j+1); scanf("%lf", &parameters[j]);
       }
-      printf("Экстремумы: ");
+      printf("          : ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if ((polynomial(i-0.01, parameters,k)>polynomial(i,parameters,k) && polynomial(i+0.01, parameters,k)>polynomial(i, parameters,k))||((polynomial(i-0.01, parameters,k))<polynomial(i, parameters,k) && polynomial(i+0.01, parameters,k)<polynomial(i, parameters,k))){ printf("%lf ",polynomial(i, parameters,k)); count++;}
       }printf("\n");
       if (count==0){
-         printf("Эксремумов нет\n");
+         printf("              \n");
       }
       
    }
@@ -119,54 +119,54 @@ void extreme(int prg){
 
 
 void root(int prg){
-   section();//отрезок выбран
+   section();//              
    int count=0;
    double a=0,b=0,c = 0,d=0;
-   if (prg!=2){//переменные
-      printf("Введите а: ");scanf_s("%lf", &a);
-      printf("Введите b: ");scanf_s("%lf", &b);
-      printf("Введите c: ");scanf_s("%lf", &c);
+   if (prg!=2){//          
+      printf("         : ");scanf("%lf", &a);
+      printf("        b: ");scanf("%lf", &b);
+      printf("        c: ");scanf("%lf", &c);
       if (prg==3 || prg==5 || prg==6){
-         printf("Введите d: ");scanf_s("%lf", &d);
+         printf("        d: ");scanf("%lf", &d);
       }
-      printf("Корни: ");
+      printf("     : ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if (fabs(f_choose(i,a,b,c,d, prg))<=0.001){ printf("%lf ",i); count++;}
       }printf("\n");
       if (count==0){
-         printf("Корней нет\n");
+         printf("          \n");
       }
    }
    else{
       double parameters[100];
       int k;
-      printf("Введите количество слагаемых: ");scanf_s("%d", &k);
+      printf("                            : ");scanf("%d", &k);
       for (int j=0; j<k; j++){
-         printf("Введите %d параметр: ", j+1); scanf_s("%lf", &parameters[j]);
+         printf("        %d         : ", j+1); scanf("%lf", &parameters[j]);
       }
-      printf("Корни: ");
+      printf("     : ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if (fabs(polynomial(i, parameters,k))<=0.0001){ printf("%lf ",polynomial(i, parameters,k)); count++;}
       }printf("\n");
       if (count==0){
-         printf("Корней нет\n");
+         printf("          \n");
       }
       
    }
 }
 void integral(int prg){
-   section();//отрезок выбран
+   section();//              
    int count=0;
-   double s=0;//gлощадь фигуры
+   double s=0;//g             
    double a=0,b=0,c = 0,d=0;
-   if (prg!=2){//переменные
-      printf("Введите а: ");scanf_s("%lf", &a);
-      printf("Введите b: ");scanf_s("%lf", &b);
-      printf("Введите c: ");scanf_s("%lf", &c);
+   if (prg!=2){//          
+      printf("         : ");scanf("%lf", &a);
+      printf("        b: ");scanf("%lf", &b);
+      printf("        c: ");scanf("%lf", &c);
       if (prg==3 || prg==5 || prg==6){
-         printf("Введите d: ");scanf_s("%lf", &d);
+         printf("        d: ");scanf("%lf", &d);
       }
-      printf("Интеграл: ");
+      printf("        : ");
       for (double i=A; i<=B; i+=0.001){
 //         if (f_choose(i,a,b,c,d, prg)!=0)
          {s+=(0.001*0.5*(f_choose(i,a,b,c,d,prg)+f_choose(i+0.001,a,b,c,d,prg))); count++;}
@@ -175,11 +175,11 @@ void integral(int prg){
    else{
       double parameters[100];
       int k;
-      printf("Введите количество слагаемых: ");scanf_s("%d", &k);
+      printf("                            : ");scanf("%d", &k);
       for (int j=0; j<k; j++){
-         printf("Введите %d параметр: ", j+1); scanf_s("%lf", &parameters[j]);
+         printf("        %d         : ", j+1); scanf("%lf", &parameters[j]);
       }
-      printf("Корни: ");
+      printf("     : ");
       for (double i=A; i<=B; i+=0.001){
          if (polynomial(i, parameters,k)==0){ printf("%lf ",polynomial(i, parameters,k)); count++;}
       }printf("\n");
@@ -192,13 +192,15 @@ void integral(int prg){
    }
 }
 
-void calc6() {   
-  int circle=0;
+
+
+int main (void){
+   int circle=0;
    do{
       int prg=0;
-      printf("Выберите вариант функции: \n 1) Cтепенная вида a*x^b+c \n 2) Полином степени вида: a0+a1*x+a2*x^2+...+aN*x^N\n 3) Показательная вида: a*b^(c*x)+b\n 4) Логарифмическая вида: a*ln(b*x)+c\n 5) Cинусоида вида: a*sin(b*x+c)+d\n 6) Косинусоида вида: a*cos(b*x+c)+d \n");
+      printf("                        : \n 1) C              a*x^b+c \n 2)                     : a0+a1*x+a2*x^2+...+aN*x^N\n 3)                   : a*b^(c*x)+b\n 4)                     : a*ln(b*x)+c\n 5) C             : a*sin(b*x+c)+d\n 6)                 : a*cos(b*x+c)+d \n");
       do{
-         scanf_s("%d", &prg);
+         scanf("%d", &prg);
          switch (prg){
             case 1: flag=1; break;
             case 2: flag=2; break;
@@ -206,19 +208,19 @@ void calc6() {
             case 4: flag=4; break;
             case 5: flag=5; break;
             case 6: flag=6; break;
-            default: printf("Неверно введено значение\n"); break;}
+            default: printf("                        \n"); break;}
       }while (prg!=1 && prg!=2 && prg!=3 && prg!=4 && prg!=5 && prg!=6);
       
       int prg1=0;
-      printf("Выберите тип калькулятора: \n 1) поиск экстремумов на отрезке \n 2) поиск корня 3)вычисление интеграла \n");
+      printf("                         : \n 1)                              \n 2)             3)                     \n");
       do{
-         scanf_s("%d", &prg1);
+         scanf("%d", &prg1);
          switch (prg1){
             case 1: extreme(prg); break;
             case 2: root(prg); break;
             case 3: integral(prg); break;
-            default: printf("Неверно введено значение\n"); break;}
+            default: printf("                        \n"); break;}
       }while (prg1!=1 && prg1!=2 && prg1!=3);
-      printf("0 - вернуться в меню;\nлюбое целое число - продолжить\n");scanf_s("%d\n", &circle);
+      printf("0 -                 ;\n                  -           \n");scanf("%d\n", &circle);
    }while (circle!=0);
 }
