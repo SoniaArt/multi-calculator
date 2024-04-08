@@ -88,7 +88,7 @@ void extreme(int prg){
       printf("Введите b: ");scanf_s("%lf", &b);
       printf("Введите c: ");scanf_s("%lf", &c);
       if (prg==3 || prg==5 || prg==6){
-         printf("Введите d: ");scanf("%lf", &d);
+         printf("Введите d: ");scanf_s("%lf", &d);
       }
       printf("Экстремумы: ");
       for (double i=A+0.01; i<=B; i+=0.01){
