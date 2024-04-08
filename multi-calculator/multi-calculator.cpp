@@ -8,6 +8,7 @@
 #include "Header4.h"
 #include "Header5.h"
 #include "Header6.h"
+#define MaxN 100
 int main() {
     setlocale(LC_ALL, "Rus");
     char t;
