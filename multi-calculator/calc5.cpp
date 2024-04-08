@@ -7,12 +7,12 @@ using namespace std;
 void probabilityMN() {
     long long int m, n;
     while (1) {
-        cout << "Введите количество успешных результатов: "; cin >> m;
+        cout << "Введите количество успешных результатов: "; cin >> m; getchar();
         if (m < 0) { cout << "Некорректное значение, попробуйте снова\n"; continue; }
         break;
     }
     while (1) {
-        cout << "Введите общее количество попыток: "; cin >> n;
+        cout << "Введите общее количество попыток: "; cin >> n; getchar();
         if (n <= 0) { cout << "Некорректное значение, попробуйте снова\n"; continue; }
         if (n < m) { cout << "Общее количество попыток не может превышать количество успешных попыток, попробуйте снова\n"; continue; }
         break;
@@ -27,7 +27,7 @@ void dispersion() {
     double sum_probab = 0;
     int amount;
     while (1) {
-        cout << "Введите количество элементов в дискретном распределении: "; cin >> amount;
+        cout << "Введите количество элементов в дискретном распределении: "; cin >> amount; getchar();
         if (amount <= 0) { cout << "Количество элементов не может быть 0 или отрицательным, повторите ввод\n"; continue; }
         break;
     }
@@ -39,9 +39,9 @@ void dispersion() {
 
     cout << "Вероятность указывается дробным числом (p > 0 p <= 1).\n";
     for (int i = 0; i < amount; i++) {
-        cout << "Введите значение " << i + 1 << "-го элемента: "; cin >> x[i];
+        cout << "Введите значение " << i + 1 << "-го элемента: "; cin >> x[i]; getchar();
         while (1) {
-            cout << "Введите вероятность для " << i + 1 << "-го элемента: "; cin >> p[i];
+            cout << "Введите вероятность для " << i + 1 << "-го элемента: "; cin >> p[i]; getchar();
             if (p[i] <= 0.0 or p[i] > 1.0) { cout << "Некорректное значение\n"; continue; }
             break;
         }
@@ -102,13 +102,13 @@ void calc5() {
         setlocale(LC_ALL, "Rus");
         int choice = 0;
         do {
-            cout << "Выберите необходимую задачу:\n1. Вероятность m/n\n2. Дисперсия для дискретного распределения величин\n"
-                << "3. Мат. ожидание для дискретного распределения величин\n0. Вернуться в предыдущее меню\n";
-            cin >> choice;
+            cout << "Выберите необходимую задачу:\n\n 1 - Вероятность m/n\n 2 - Дисперсия для дискретного распределения величин\n"
+                << " 3 - Мат. ожидание для дискретного распределения величин\n\nДля возврата в главное меню введите 0.\n";
+            cin >> choice; getchar();
             switch (choice) {
-                case 1: system("cls"); probabilityMN(); cout << "\n\n"; break;
-                case 2: system("cls"); dispersion(); cout << "\n\n"; break;
-                case 3: system("cls");  expectedVal(); cout << "\n\n"; break;
+                case 1: system("cls"); probabilityMN(); cout << "\n"; break;
+                case 2: system("cls"); dispersion(); cout << "\n"; break;
+                case 3: system("cls");  expectedVal(); cout << "\n"; break;
                 case 0: system("cls"); break;
                 default: cout << "Некорректное значение. Попробуйте снова.\n";
             }

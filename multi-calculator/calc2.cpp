@@ -3,6 +3,8 @@
 #include <string.h>
 #include <locale.h>
 #include "Header2.h"
+#include <windows.h>
+
 struct fraction {
 	int num;
 	int den;
@@ -72,9 +74,9 @@ void calc2() {
 	setlocale(LC_ALL, "Rus");
 	char oper;
 	do {
-		printf("Выберите операцию над дробями:\n");
-		printf("1.Сложение дробей\n2.Вычитание дробей\n3.Умножение дробей\n4.Деление дробей\n5.Сравнение дробей\n6.Сокращение дробей\n7.Представление в виде десятичной дроби\n");
-		printf("Для выхода введите 0.\n");
+		printf("Выберите операцию над дробями:\n\n");
+		printf(" 1 - Сложение дробей\n 2 - Вычитание дробей\n 3 - Умножение дробей\n 4 - Деление дробей\n 5 - Сравнение дробей\n 6 - Сокращение дробей\n 7 - Представление в виде десятичной дроби\n");
+		printf("\nДля выхода введите 0.\n");
 		do {
 			printf("Ваш выбор: "); scanf_s("%c", &oper); getchar();
 			if (oper < 48 || oper > 55) { printf("Некорректный ввод. Повторите попытку\n"); }
@@ -87,6 +89,7 @@ void calc2() {
 
 		if (oper != '0')
 		{
+			system("cls");
 			do {
 				if (oper > 48 && oper < 54) { printf("Введите 1-ую дробь: "); }
 				else { printf("Введите дробь: "); }
@@ -144,7 +147,7 @@ void calc2() {
 		case '5': comparison(fr1, fr2); break;
 		case '6': reduction(fr1); break;
 		case '7': decimal(fr1); break;
-		case '0': printf("Выход\n"); break;
+		case '0': printf("Выход\n"); system("cls"); break;
 		}
 	} while (oper != '0');
 }

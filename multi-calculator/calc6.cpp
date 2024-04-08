@@ -197,11 +197,13 @@ void integral(int prg){
 
 void calc6()
 {
+   system("cls");
    int circle=0;
    do{
       int prg=0;
-      printf("Выберите вариант функции: \n 1) Cтепенная вида a*x^b+c \n 2) Полином степени вида: a0+a1*x+a2*x^2+...+aN*x^N\n 3) Показательная вида: a*b^(c*x)+b\n 4) Логарифмическая вида: a*ln(b*x)+c\n 5) Cинусоида вида: a*sin(b*x+c)+d\n 6) Косинусоида вида: a*cos(b*x+c)+d \n");
+      printf("Выберите вариант функции: \n\n 1 - Cтепенная вида a*x^b+c \n 2 - Полином степени вида: a0+a1*x+a2*x^2+...+aN*x^N\n 3 - Показательная вида: a*b^(c*x)+b\n 4 - Логарифмическая вида: a*ln(b*x)+c\n 5 - Cинусоида вида: a*sin(b*x+c)+d\n 6 - Косинусоида вида: a*cos(b*x+c)+d \n\n");
       do{
+         printf("Ваш выбор: ");
          scanf("%d", &prg);
          switch (prg){
             case 1: flag=1; break;
@@ -214,8 +216,9 @@ void calc6()
       }while (prg!=1 && prg!=2 && prg!=3 && prg!=4 && prg!=5 && prg!=6);
       
       int prg1=0;
-      printf("Выберите тип калькулятора: \n 1) поиск экстремумов на отрезке \n 2) поиск корня 3)вычисление интеграла \n");
+      printf("\nВыберите тип калькулятора: \n\n 1 - Поиск экстремумов на отрезке\n 2 - Поиск корня\n 3 - Вычисление интеграла\n\n");
       do{
+          printf("Ваш выбор: ");
          scanf("%d", &prg1);
          switch (prg1){
             case 1: extreme(prg); break;
@@ -223,7 +226,7 @@ void calc6()
             case 3: integral(prg); break;
             default: printf("Неверно введено значение\n"); break;}
       }while (prg1!=1 && prg1!=2 && prg1!=3);
-      printf("0 - вернуться в меню;\nлюбое целое число - продолжить\n");scanf("%d\n", &circle);
+      printf("Для возврата в главное меню введите 0.\nЛюбое целое число - продолжить\n");scanf("%d\n", &circle);
    }while (circle!=0);
 
 }

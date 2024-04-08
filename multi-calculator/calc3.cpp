@@ -170,6 +170,7 @@ void PermutationsFunc(int n)
 void PlacementsWithRep()
 {
     char n, k;
+    system("cls");
     do
     {
         printf("Введите количество элементов (число n из интервала [1,100]): ");
@@ -194,6 +195,7 @@ void PlacementsWithRep()
 void PlacementsWithoutRep()
 {
     char n, k;
+    system("cls");
     do
     {
         printf("Введите количество элементов (число n из интервала [1,100]): ");
@@ -218,6 +220,7 @@ void PlacementsWithoutRep()
 void CombinationsWithRep()
 {
     char n, k;
+    system("cls");
     do
     {
         printf("Введите количество элементов (число n из интервала [1,100]): ");
@@ -242,6 +245,7 @@ void CombinationsWithRep()
 void CombinationsWithoutRep()
 {
     char n, k;
+    system("cls");
     do
     {
         printf("Введите количество элементов (число n из интервала [1,100]): ");
@@ -266,6 +270,7 @@ void CombinationsWithoutRep()
 void Permutations()
 {
     char n;
+    system("cls");
     do
     {
         printf("Введите количество элементов (число n из интервала [1,100]): ");
@@ -283,15 +288,16 @@ void Permutations()
 void calc3()
 {
     char selection;
+    system("cls");
     do
     {
-        printf("Выберите формулу комбинаторики:\n");
-        printf("1.Размещения с повторением\n");
-        printf("2.Размещения без повторений\n");
-        printf("3.Сочетание с повторением\n");
-        printf("4.Сочетание без повторений\n");
-        printf("5.Перестановки\n");
-        printf("Для возврата в главное меню введите 0.\n");
+        printf("Выберите формулу комбинаторики:\n\n");
+        printf(" 1 - Размещения с повторением\n");
+        printf(" 2 - Размещения без повторений\n");
+        printf(" 3 - Сочетание с повторением\n");
+        printf(" 4 - Сочетание без повторений\n");
+        printf(" 5 - Перестановки\n");
+        printf("\nДля возврата в главное меню введите 0.\n");
 
         do
         {
@@ -329,6 +335,7 @@ void calc3()
             break;
         case 0:
             printf("Выход\n\n");
+            system("cls");
             break;
         }
     } while (selection != 0);

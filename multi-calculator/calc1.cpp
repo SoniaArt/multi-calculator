@@ -2,6 +2,8 @@
 #include <locale.h>
 #include <malloc.h>
 #include "Header1.h";
+#include <windows.h>
+
 void calc1() {
 
 	setlocale(LC_ALL, "Rus");
@@ -9,13 +11,15 @@ void calc1() {
 	int choice;
 
 	do {
-		printf("Выберете действие:\n1 - Сложение матриц\n2 - Вычитание матриц\n3 - Умножение матриц\n4 - Умножение матрицы на число\n5 - Сложение и вычитание матрицы с числом\n6 - Транспонирование матрицы\n7 - Определитель матрицы\n8 - Обратная матрица\n0 - Выход\n ");
+		printf("Выберете действие:\n\n 1 - Сложение матриц\n 2 - Вычитание матриц\n 3 - Умножение матриц\n 4 - Умножение матрицы на число\n 5 - Сложение и вычитание матрицы с числом\n 6 - Транспонирование матрицы\n 7 - Определитель матрицы\n 8 - Обратная матрица\n\nДля возврата в главное меню введите 0.\nВаш выбор: ");
 		scanf_s("%d", &choice);
 		getchar();
+		printf("\n");
 
 		switch (choice) {
 		case 1:
 		{
+			system("cls");
 			printf("Сложение матриц\n");
 			int n, m;
 			do {
@@ -47,6 +51,7 @@ void calc1() {
 
 		case 2:
 		{
+			system("cls");
 			printf("Вычитание матриц\n");
 			int n, m;
 			do {
@@ -78,6 +83,7 @@ void calc1() {
 
 		case 3:
 		{
+			system("cls");
 			printf("Умножение матриц\n");
 
 			int n1, n2, m1, m2;
@@ -114,6 +120,7 @@ void calc1() {
 		}
 		case 4:
 		{
+			system("cls");
 			printf("Умножение матрицы на число\n");
 			int n, m;
 			float num;
@@ -144,7 +151,7 @@ void calc1() {
 		}
 
 		case 5: {
-
+			system("cls");
 			printf("Сложение(вычитание) матрицы с числом\n");
 			int n, m;
 			float num;
@@ -173,6 +180,7 @@ void calc1() {
 		}
 		case 6:
 		{
+			system("cls");
 			printf("Транспонирование матрицы\n");
 			int n, m;
 			do {
@@ -199,6 +207,7 @@ void calc1() {
 
 		case 7: 
 		{
+			system("cls");
 			printf("Нахождение определителя матрицы\n");
 			int n, m;
 			do {
@@ -222,6 +231,7 @@ void calc1() {
 
 		case 8:
 		{
+			system("cls");
 			printf("Нахождение обратной матрицы\n");
 			int n, m;
 			do {

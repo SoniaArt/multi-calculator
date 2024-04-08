@@ -20,11 +20,11 @@ int TTrueNum(char GuessNum[])
 int Inputt()
 {
 	char GuessNum[100];
-	scanf_s("%s", &GuessNum, sizeof(GuessNum));
+	scanf_s("%s", &GuessNum, sizeof(GuessNum)); getchar();
 	while (!(TTrueNum(GuessNum)))
 	{
 		printf("Повторите ввод: ");
-		scanf_s("%s", &GuessNum, sizeof(GuessNum));
+		scanf_s("%s", &GuessNum, sizeof(GuessNum)); getchar();
 	}
 	return atoi(GuessNum);
 }
@@ -44,11 +44,11 @@ int TTrueNum1(char GuessNum[])
 int Inputt1()
 {
 	char GuessNum[100];
-	scanf_s("%s", &GuessNum, sizeof(GuessNum));
+	scanf_s("%s", &GuessNum, sizeof(GuessNum)); getchar();
 	while (!(TTrueNum1(GuessNum)))
 	{
 		printf("Повторите ввод: ");
-		scanf_s("%s", &GuessNum, sizeof(GuessNum));
+		scanf_s("%s", &GuessNum, sizeof(GuessNum)); getchar();
 	}
 	return atoi(GuessNum);
 }
@@ -295,8 +295,9 @@ void calc4()
 	char quotient[100], remainder[100];
 	do
 	{
-		printf("\nВыберите, какую операцию вы хотите совершить\n");
-		printf("\n1 - сложение многочленов\n2 - вычитание многочленов\n3 - умножение многочленов\n4 - умножение многочлена на число\n5 - Вычисление производной от многочлена\n6 - деление многочлена в столбик\n\n");
+		printf("Выберите, какую операцию вы хотите совершить\n");
+		printf("\n 1 - Cложение многочленов\n 2 - Вычитание многочленов\n 3 - Умножение многочленов\n 4 - Умножение многочлена на число\n 5 - Вычисление производной от многочлена\n 6 - Деление многочлена в столбик\n\n");
+		printf("Для возврата в главное меню введите 0.\n");
 		ch = Inputt();
 		switch (ch)
 		{
