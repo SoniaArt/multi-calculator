@@ -97,6 +97,7 @@ void calc2() {
 				fr1.den = atoi(str_den1);
 				if (check(str1, len1) == 1) { printf("Некорректный ввод дроби.\n"); }
 				else if (fr1.den == 0) { printf("Знаменатель дроби не может быть равен нулю.\n"); }
+				if (fr1.num == 0) { fr1.den = 0; printf("Дробь равна нулю. Повторите ввод.\n"); }
 			} while ((fr1.den == 0) || (check(str1, len1) == 1));
 			if (oper > 48 && oper < 54) {
 				do {
@@ -108,6 +109,7 @@ void calc2() {
 					fr2.den = atoi(str_den2);
 					if (check(str2, len2) == 1) { printf("Некорректный ввод дроби.\n"); }
 					else if (fr2.den == 0) { printf("Знаменатель дроби не может быть равен нулю.\n"); }
+					if (fr2.num == 0) { fr2.den = 0; printf("Дробь равна нулю. Повторите ввод.\n"); }
 				} while ((fr2.den == 0) || (check(str2, len2) == 1));
 			}
 		}
