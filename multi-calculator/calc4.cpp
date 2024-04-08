@@ -66,10 +66,20 @@ void Print(char coefficients[], int degree)
 					printf("%d", coefficients[i]);
 				}
 				else if (degree == 1) {
-					printf("%dx", coefficients[i]);
+					if (coefficients[i] = 1) {
+						printf("x");
+					}
+					else {
+						printf("%dx", coefficients[i]);
+					}
 				}
 				else {
-					printf("%dx^%d", coefficients[i], i);
+					if (coefficients[i] = 1) {
+						printf("x^%d", i);
+					}
+					else {
+						printf("%dx^%d", coefficients[i], i);
+					}
 				}
 			}
 			else
@@ -80,10 +90,20 @@ void Print(char coefficients[], int degree)
 						printf("+%d", coefficients[i]);
 					}
 					else if (i == 1) {
-						printf("+%dx", coefficients[i]);
+						if (coefficients[i] = 1) {
+							printf("+x");
+						}
+						else {
+							printf("+%dx", coefficients[i]);
+						}
 					}
 					else {
-						printf("+%dx^%d", coefficients[i], i);
+						if (coefficients[i] = 1) {
+							printf("+x^%d", i);
+						}
+						else {
+							printf("+%dx^%d", coefficients[i], i);
+						}
 					}
 				}
 				else
@@ -92,10 +112,21 @@ void Print(char coefficients[], int degree)
 						printf("%d", coefficients[i]);
 					}
 					else if (i == 1) {
-						printf("%dx", coefficients[i]);
+						if (coefficients[i] = -1)
+						{
+							printf("-x");
+						}
+						else {
+							printf("%dx", coefficients[i]);
+						}
 					}
 					else {
-						printf("%dx^%d", coefficients[i], i);
+						if (coefficients[i] = -1) {
+							printf("-x^%d", i);
+						}
+						else {
+							printf("%dx^%d", coefficients[i], i);
+						}
 					}
 				}
 			}
@@ -117,7 +148,7 @@ void input_coefficients(char* coefficients, int* degree)
 	Print(coefficients, *degree);
 }
 
-void Sum_coefficients(char coefficients1[], char coefficients2[], int degree1, int degree2, char coefficients_new[], int *degree3)
+void Sum_coefficients(char coefficients1[], char coefficients2[], int degree1, int degree2, char coefficients_new[], int* degree3)
 {
 	if (degree1 >= degree2)
 	{
@@ -126,7 +157,7 @@ void Sum_coefficients(char coefficients1[], char coefficients2[], int degree1, i
 	else {
 		*degree3 = degree2;
 	}
-	for (int t = 0; t<= *degree3; t++)
+	for (int t = 0; t <= *degree3; t++)
 	{
 		coefficients_new[t] = 0;
 	}
@@ -139,7 +170,7 @@ void Sum_coefficients(char coefficients1[], char coefficients2[], int degree1, i
 			}
 		}
 	}
-	for (int k=0; k<=degree2; k++)
+	for (int k = 0; k <= degree2; k++)
 	{
 		for (int j = 0; j <= degree2; j++)
 		{
@@ -197,7 +228,7 @@ void Umn(char coefficients1[], char coefficients2[], int degree1, int degree2, c
 	{
 		for (int j = 0; j <= degree2; j++)
 		{
-			coefficients_new[i+j] += (coefficients1[i] * coefficients2[j]);
+			coefficients_new[i + j] += (coefficients1[i] * coefficients2[j]);
 		}
 	}
 	Print(coefficients_new, *degree3);
@@ -225,15 +256,43 @@ void Proizv(char coefficients1[], int degree1, char coefficients_new[], int* deg
 	Print(coefficients_new, *degree3);
 }
 
+void Del(char coefficients1[], char coefficients2[], char quotient[], char remainder[], int degree1, int degree2)
+{
+	char temp[100];
+	for (int t = 0; t < 100; t++)
+	{
+		temp[t] = 0;
+	}
+	for (int i = degree1 - degree2; i >= 0; i--)
+	{
+		quotient[i] = (coefficients1[i + degree2] / coefficients2[degree2]);
+		for (int j = 0; j <= degree2; j++)
+		{
+			temp[j + i] = coefficients2[j] * quotient[i];
+		}
+		for (int j = 0; j <= degree2; j++)
+		{
+			coefficients1[j + i] = coefficients1[j + i] - temp[j + i];
+		}
+	}
+	for (int i = 0; i <= degree1; i++)
+	{
+		remainder[i] = coefficients1[i];
+	}
+	printf("Частное: ");
+	Print(quotient, (degree1 - degree2));
+	printf("Остаток: ");
+	Print(remainder, degree1);
+}
 
-
-void calc4() 
+void calc4()
 {
 	setlocale(LC_ALL, "Russian");
 	int ch, degree = 0, a;
-	int degree1, degree2, degree3;
+	int degree1, degree2, degree3, degree4;
 	char GuessNum[100], coefficients[100], coefficients_new[100];
 	char coefficients1[100], coefficients2[100];
+	char quotient[100], remainder[100];
 	do
 	{
 		printf("\nВыберите, какую операцию вы хотите совершить\n");
@@ -267,6 +326,9 @@ void calc4()
 			Proizv(coefficients1, degree1, coefficients_new, &degree3);
 			break;
 		case 6:
+			input_coefficients(coefficients1, &degree1);
+			input_coefficients(coefficients2, &degree2);
+			Del(coefficients1, coefficients2, quotient, remainder, degree1, degree2);
 			break;
 		default: printf("error\n");
 		}
