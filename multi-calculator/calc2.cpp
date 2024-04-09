@@ -4,7 +4,6 @@
 #include <locale.h>
 #include "Header2.h"
 #include <windows.h>
-
 struct fraction {
 	int num;
 	int den;
@@ -33,11 +32,9 @@ int check(char* str, int len) {
 	return cnt;
 }
 int NOD(int a, int b) {
-	if (b == 0) return a;
-	if ((a < 0) || (a > 0 && b > 0)) {
-		return NOD(b, a % b);
-	}
-	else if (b < 0) { return NOD(b, (-1) * abs(a) % abs(b)); }
+	a = abs(a); b = abs(b);
+	if (b == 0) { return a; }
+	else { return NOD(b, a % b); }
 }
 int NOK(int a, int b) {
 	return ((a * b) / NOD(a, b));
@@ -77,6 +74,7 @@ void calc2() {
 		printf("Выберите операцию над дробями:\n\n");
 		printf(" 1 - Сложение дробей\n 2 - Вычитание дробей\n 3 - Умножение дробей\n 4 - Деление дробей\n 5 - Сравнение дробей\n 6 - Сокращение дробей\n 7 - Представление в виде десятичной дроби\n");
 		printf("\nДля выхода введите 0.\n");
+		printf("ВАЖНО! Для корректной работы всех функций калькулятора вводите минус ТОЛЬКО в числителе.\n");
 		do {
 			printf("Ваш выбор: "); scanf_s("%c", &oper); getchar();
 			if (oper < 48 || oper > 55) { printf("Некорректный ввод. Повторите попытку\n"); }
@@ -86,8 +84,6 @@ void calc2() {
 		int len1, len2;
 		char str1[MaxN], str2[MaxN];
 		char str_num1[MaxN], str_den1[MaxN], str_num2[MaxN], str_den2[MaxN];
-
-		if (oper != '0')
 		{
 			system("cls");
 			do {
@@ -149,5 +145,6 @@ void calc2() {
 		case '7': decimal(fr1); break;
 		case '0': printf("Выход\n"); system("cls"); break;
 		}
-	} while (oper != '0');
+		res.num = 0; res.den = 0; fr1.num = 0; fr2.num = 0;
+	} while (oper != '0'); 
 }
