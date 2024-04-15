@@ -8,7 +8,7 @@ int TTrueNum(char GuessNum[])
 {
 	int i;
 	for (i = 0; i < strlen(GuessNum); i++) {
-		if (GuessNum[i] == '+' || GuessNum[i] == '-' || GuessNum[i] == '.') {}
+		if (GuessNum[i] == '+' || GuessNum[i] == '-') {}
 		else if (!isdigit(GuessNum[i])) {
 			printf("Некорректный ввод.\n\n");
 			return 0;
@@ -53,7 +53,7 @@ int Inputt1()
 	return atoi(GuessNum);
 }
 
-
+// Вывод многочлена на экран
 void Print(char coefficients[], int degree)
 {
 	int i;
@@ -135,6 +135,7 @@ void Print(char coefficients[], int degree)
 	printf("\n\n");
 }
 
+// Ввод коэффициентов многочлена
 void input_coefficients(char* coefficients, int* degree)
 {
 	printf("Введите степень многочлена:");
@@ -148,7 +149,8 @@ void input_coefficients(char* coefficients, int* degree)
 	Print(coefficients, *degree);
 }
 
-void Sum_coefficients(char coefficients1[], char coefficients2[], int degree1, int degree2, char coefficients_new[], int* degree3)
+// Сложение многочленов
+void Sum(char coefficients1[], char coefficients2[], int degree1, int degree2, char coefficients_new[], int* degree3)
 {
 	if (degree1 >= degree2)
 	{
@@ -182,7 +184,8 @@ void Sum_coefficients(char coefficients1[], char coefficients2[], int degree1, i
 	Print(coefficients_new, *degree3);
 }
 
-void Minus_coefficients(char coefficients1[], char coefficients2[], int degree1, int degree2, char coefficients_new[], int* degree3)
+// Вычитание многочленов
+void Minus(char coefficients1[], char coefficients2[], int degree1, int degree2, char coefficients_new[], int* degree3)
 {
 	if (degree1 >= degree2)
 	{
@@ -216,7 +219,8 @@ void Minus_coefficients(char coefficients1[], char coefficients2[], int degree1,
 	Print(coefficients_new, *degree3);
 }
 
-void Umn(char coefficients1[], char coefficients2[], int degree1, int degree2, char coefficients_new[], int* degree3)
+// Умножение многочленов
+void Multiplication(char coefficients1[], char coefficients2[], int degree1, int degree2, char coefficients_new[], int* degree3)
 {
 	*degree3 = degree1 + degree2;
 	for (int t = 0; t <= *degree3; t++)
@@ -234,7 +238,8 @@ void Umn(char coefficients1[], char coefficients2[], int degree1, int degree2, c
 	Print(coefficients_new, *degree3);
 }
 
-void Umn_count(char coefficients1[], int degree1, char coefficients_new[], int a)
+// Умножение многочлена на число
+void Multiplication_count(char coefficients1[], int degree1, char coefficients_new[], int a)
 {
 	for (int i = 0; i <= degree1; i++)
 	{
@@ -243,7 +248,8 @@ void Umn_count(char coefficients1[], int degree1, char coefficients_new[], int a
 	Print(coefficients_new, degree1);
 }
 
-void Proizv(char coefficients1[], int degree1, char coefficients_new[], int* degree3)
+// Вычисление производной
+void Composition(char coefficients1[], int degree1, char coefficients_new[], int* degree3)
 {
 	*degree3 = degree1 - 1;
 	for (int i = 0; i <= degree1; i++)
@@ -256,7 +262,8 @@ void Proizv(char coefficients1[], int degree1, char coefficients_new[], int* deg
 	Print(coefficients_new, *degree3);
 }
 
-void Del(char coefficients1[], char coefficients2[], char quotient[], char remainder[], int degree1, int degree2)
+// Деление многочлена в столбик
+void Division(char coefficients1[], char coefficients2[], char quotient[], char remainder[], int degree1, int degree2)
 {
 	char temp[100];
 	for (int t = 0; t < 100; t++)
@@ -305,32 +312,32 @@ void calc4()
 		case 1:
 			input_coefficients(coefficients1, &degree1);
 			input_coefficients(coefficients2, &degree2);
-			Sum_coefficients(coefficients1, coefficients2, degree1, degree2, coefficients_new, &degree3);
+			Sum(coefficients1, coefficients2, degree1, degree2, coefficients_new, &degree3);
 			break;
 		case 2:
 			input_coefficients(coefficients1, &degree1);
 			input_coefficients(coefficients2, &degree2);
-			Minus_coefficients(coefficients1, coefficients2, degree1, degree2, coefficients_new, &degree3);
+			Minus(coefficients1, coefficients2, degree1, degree2, coefficients_new, &degree3);
 			break;
 		case 3:
 			input_coefficients(coefficients1, &degree1);
 			input_coefficients(coefficients2, &degree2);
-			Umn(coefficients1, coefficients2, degree1, degree2, coefficients_new, &degree3);
+			Multiplication(coefficients1, coefficients2, degree1, degree2, coefficients_new, &degree3);
 			break;
 		case 4:
 			input_coefficients(coefficients1, &degree1);
 			printf("Введите число: ");
 			a = Inputt();
-			Umn_count(coefficients1, degree1, coefficients_new, a);
+			Multiplication_count(coefficients1, degree1, coefficients_new, a);
 			break;
 		case 5:
 			input_coefficients(coefficients1, &degree1);
-			Proizv(coefficients1, degree1, coefficients_new, &degree3);
+			Composition(coefficients1, degree1, coefficients_new, &degree3);
 			break;
 		case 6:
 			input_coefficients(coefficients1, &degree1);
 			input_coefficients(coefficients2, &degree2);
-			Del(coefficients1, coefficients2, quotient, remainder, degree1, degree2);
+			Division(coefficients1, coefficients2, quotient, remainder, degree1, degree2);
 			break;
 		case 0:
 			system("cls");
