@@ -1,3 +1,4 @@
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <stdbool.h>
@@ -6,10 +7,70 @@
 #include "Header6.h"
 #include <stdio.h>
 #include <math.h>
-//вынести отдельно ввод параметров, чтобы не нужно было их вводить каждый раз
+double char_double (char *input_str){
+    char y[20];
+    int flag=0;//РѕР±РѕР·РЅР°С‡РµРЅРёРµ С‚РѕРіРѕ, С‡С‚Рѕ С‡РёСЃР»Рѕ РїРѕР»РЅРѕСЃС‚СЊСЋ РїСЂРѕРІРµСЂРµРЅРѕ, Рё РѕРЅРѕ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С‚РёРїСѓ double
+    double y1;
+    do{
+        int k_points=0;//РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕС‡РµРє РІ СЃС‚СЂРѕРєРµ
+        printf("%s",input_str);scanf("%s", y);
+        for (int i=0; i<strlen(y);i++){
+            if (i==0){
+                if (y[i]!='-' && isdigit(y[i])==0)//РµСЃР»Рё СЃРёРјРІРѕР» РЅРµ СЏРІР»СЏРµС‚СЃСЏ РјРёРЅСѓСЃРѕРј Рё РЅРµ СЏРІР»СЏРµС‚СЃСЏ С†РёС„СЂРѕР№
+                {break;}//РїСЂРµСЂС‹РІР°РµРј РїСЂРѕРіСЂР°РјРјСѓ, С‡С‚РѕР±С‹ РІРІРѕРґРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ
+            }
+
+            if (i>0)
+            {
+                if (y[i]!='.' && isdigit(y[i])==0)//РµСЃР»Рё СЃРёРјРІРѕР» РЅРµ СЏРІР»СЏРµС‚СЃСЏ С‚РѕС‡РєРѕР№ Рё РЅРµ СЏРІР»СЏРµС‚СЃСЏ С†РёС„СЂРѕР№
+                {break;}//РїСЂРµСЂС‹РІР°РµРј РїСЂРѕРіСЂР°РјРјСѓ, С‡С‚РѕР±С‹ РІРІРѕРґРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ
+            }
+            if (y[i]=='.'){
+                k_points++;
+                if (k_points>1){
+                    break;
+                }
+            }
+            if (i==strlen(y)-1)
+            {
+                    flag=1;
+                    y1=atof(y);
+            }
+        }
+    }while (flag==0);
+    return y1;
+}
+
+int char_int(char *input_str){
+    char y[20];
+    int flag=0;//РѕР±РѕР·РЅР°С‡РµРЅРёРµ С‚РѕРіРѕ, С‡С‚Рѕ С‡РёСЃР»Рѕ РїРѕР»РЅРѕСЃС‚СЊСЋ РїСЂРѕРІРµСЂРµРЅРѕ, Рё РѕРЅРѕ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С‚РёРїСѓ int
+    int y1;
+    do{
+        printf("%s",input_str);scanf("%s", y);
+        for (int i=0; i<strlen(y);i++){
+            if (i==0){
+                if (y[i]!='-' && isdigit(y[i])==0)//РµСЃР»Рё СЃРёРјРІРѕР» РЅРµ СЏРІР»СЏРµС‚СЃСЏ РјРёРЅСѓСЃРѕРј Рё РЅРµ СЏРІР»СЏРµС‚СЃСЏ С†РёС„СЂРѕР№
+                {break;}//РїСЂРµСЂС‹РІР°РµРј РїСЂРѕРіСЂР°РјРјСѓ, С‡С‚РѕР±С‹ РІРІРѕРґРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ
+            }
+
+            if (i>0)
+            {
+                if (isdigit(y[i])==0)//РµСЃР»Рё СЃРёРјРІРѕР» РЅРµ СЏРІР»СЏРµС‚СЃСЏ С†РёС„СЂРѕР№
+                {break;}//РїСЂРµСЂС‹РІР°РµРј РїСЂРѕРіСЂР°РјРјСѓ, С‡С‚РѕР±С‹ РІРІРѕРґРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ
+            }
+            if (i==strlen(y)-1)
+            {
+                    flag=1;
+                    y1=atoi(y);
+            }
+        }
+    }while (flag==0);
+    return y1;
+}
+//РІС‹РЅРµСЃС‚Рё РѕС‚РґРµР»СЊРЅРѕ РІРІРѕРґ РїР°СЂР°РјРµС‚СЂРѕРІ, С‡С‚РѕР±С‹ РЅРµ РЅСѓР¶РЅРѕ Р±С‹Р»Рѕ РёС… РІРІРѕРґРёС‚СЊ РєР°Р¶РґС‹Р№ СЂР°Р·
 int flag;
-int prg=0;//выбор функции
-double A, B;//границы отрезка
+int prg=0;//РІС‹Р±РѕСЂ С„СѓРЅРєС†РёРё
+double A, B;//РіСЂР°РЅРёС†С‹ РѕС‚СЂРµР·РєР°
 double power_function(double x, double a, double b, double c, double d){
    double y;
 
@@ -35,6 +96,9 @@ double indicative(double x, double a, double b, double c, double d){
 }
 
 double logarithmic(double x, double a, double b, double c, double d){
+//   while ((x*b)<0){
+//      break;
+//   }
     double y;
 
    y=a*log(b*x)+c;
@@ -67,51 +131,52 @@ double f_choose(double x, double a, double b, double c, double d, int prg){
    return y;
 }
 
-void section(void){//отрезок работы
+void section(void){//РѕС‚СЂРµР·РѕРє СЂР°Р±РѕС‚С‹
     do{
-        printf("Введите крайние точки отрезка: ");scanf("%lf %lf", &A, &B);
+       A=char_double("Р’РІРµРґРёС‚Рµ РїРµСЂРІСѓСЋ РєСЂР°Р№РЅСЋСЋ С‚РѕС‡РєСѓ РѕС‚СЂРµР·РєР°: ");
+       B=char_double("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂСѓСЋ РєСЂР°Р№РЅСЋСЋ С‚РѕС‡РєСѓ РѕС‚СЂРµР·РєР°: ");
         if (A>B){
             int n;
             n=A; A=B; B=n;
         }
         if (A>=B-0.01){
-            printf("Слишком близкие значения, попробуйте снова");
+            printf("РЎР»РёС€РєРѕРј Р±Р»РёР·РєРёРµ Р·РЅР°С‡РµРЅРёСЏ, РїРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°");
         }
     }while (A>B-0.01);
 }
 
 void extreme(int prg){
-   section();//отрезок выбран
+   section();//РѕС‚СЂРµР·РѕРє РІС‹Р±СЂР°РЅ
    int count=0;
    double a=0,b=0,c = 0,d=0;
    if (prg!=2){
-      printf("Введите а: ");scanf("%lf", &a);
-      printf("Введите b: ");scanf("%lf", &b);
-      printf("Введите c: ");scanf("%lf", &c);
+      a=char_double("Р’РІРµРґРёС‚Рµ Р°: ");
+      b=char_double("Р’РІРµРґРёС‚Рµ b: ");
+      c=char_double("Р’РІРµРґРёС‚Рµ c: ");
       if (prg==3 || prg==5 || prg==6){
-         printf("Введите d: ");scanf("%lf", &d);
+         d=char_double("Р’РІРµРґРёС‚Рµ d: ");
       }
-      printf("Экстремумы: ");
+      printf("Р­РєСЃС‚СЂРµРјСѓРјС‹: ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if ((f_choose(i-0.01,a,b,c,d, prg)>f_choose(i,a,b,c,d,prg) && f_choose(i+0.01,a,b,c,d,prg)>f_choose(i,a,b,c,d,prg))||(f_choose(i-0.01,a,b,c,d,prg)<f_choose(i,a,b,c,d,prg) && f_choose(i+0.01,a,b,c,d,prg)<f_choose(i,a,b,c,d,prg))){ printf("%lf ",f_choose(i,a,b,c,d,prg)); count++;}
       }printf("\n");
       if (count==0){
-         printf("Эксремумов нет\n");
+         printf("Р­РєСЃСЂРµРјСѓРјРѕРІ РЅРµС‚\n");
       }
    }
    else{
       double parameters[100];
       int k;
-      printf("Введите количество слагаемых: ");scanf("%d", &k);
+      k=char_int("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»Р°РіР°РµРјС‹С…: ");
       for (int j=0; j<k; j++){
-         printf("Введите %d параметр: ", j+1); scanf("%lf", &parameters[j]);
+         printf("Р’РІРµРґРёС‚Рµ %d РїР°СЂР°РјРµС‚СЂ: ", j+1); scanf("%lf", &parameters[j]);//j+1=char_double("Р’РІРµРґРёС‚Рµ СЃР»РµРґСѓСЋС‰РёР№ РїР°СЂР°РјРµС‚СЂ: ");
       }
-      printf("Экстремумы: ");
+      printf("Р­РєСЃС‚СЂРµРјСѓРјС‹: ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if ((polynomial(i-0.01, parameters,k)>polynomial(i,parameters,k) && polynomial(i+0.01, parameters,k)>polynomial(i, parameters,k))||((polynomial(i-0.01, parameters,k))<polynomial(i, parameters,k) && polynomial(i+0.01, parameters,k)<polynomial(i, parameters,k))){ printf("%lf ",polynomial(i, parameters,k)); count++;}
       }printf("\n");
       if (count==0){
-         printf("Эксремумов нет\n");
+         printf("Р­РєСЃСЂРµРјСѓРјРѕРІ РЅРµС‚\n");
       }
       
    }
@@ -120,54 +185,54 @@ void extreme(int prg){
 
 
 void root(int prg){
-   section();//отрезок выбран
+   section();//РѕС‚СЂРµР·РѕРє РІС‹Р±СЂР°РЅ
    int count=0;
    double a=0,b=0,c = 0,d=0;
-   if (prg!=2){//переменные
-      printf("Введите а: ");scanf("%lf", &a);
-      printf("Введите b: ");scanf("%lf", &b);
-      printf("Введите c: ");scanf("%lf", &c);
+   if (prg!=2){//РїРµСЂРµРјРµРЅРЅС‹Рµ
+      a=char_double("Р’РІРµРґРёС‚Рµ a: ");
+      b=char_double("Р’РІРµРґРёС‚Рµ b: ");
+      c=char_double("Р’РІРµРґРёС‚Рµ c: ");
       if (prg==3 || prg==5 || prg==6){
-         printf("Введите d: ");scanf("%lf", &d);
+         d=char_double("Р’РІРµРґРёС‚Рµ d: ");
       }
-      printf("Корни: ");
+      printf("РљРѕСЂРЅРё: ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if (fabs(f_choose(i,a,b,c,d, prg))<=0.001){ printf("%lf ",i); count++;}
       }printf("\n");
       if (count==0){
-         printf("Корней нет\n");
+         printf("РљРѕСЂРЅРµР№ РЅРµС‚\n");
       }
    }
    else{
       double parameters[100];
       int k;
-      printf("Введите количество слагаемых: ");scanf("%d", &k);
+      k=char_int("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»Р°РіР°РµРјС‹С…: ");
       for (int j=0; j<k; j++){
-         printf("Введите %d параметр: ", j+1); scanf("%lf", &parameters[j]);
+         printf("Р’РІРµРґРёС‚Рµ %d РїР°СЂР°РјРµС‚СЂ: ", j+1); scanf("%lf", &parameters[j]);
       }
-      printf("Корни: ");
+      printf("РљРѕСЂРЅРё: ");
       for (double i=A+0.01; i<=B; i+=0.01){
          if (fabs(polynomial(i, parameters,k))<=0.0001){ printf("%lf ",polynomial(i, parameters,k)); count++;}
       }printf("\n");
       if (count==0){
-         printf("Корней нет\n");
+         printf("РљРѕСЂРЅРµР№ РЅРµС‚\n");
       }
       
    }
 }
 void integral(int prg){
-   section();//отрезок выбран
+   section();//РѕС‚СЂРµР·РѕРє РІС‹Р±СЂР°РЅ
    int count=0;
-   double s=0;//gлощадь фигуры
+   double s=0;//gР»РѕС‰Р°РґСЊ С„РёРіСѓСЂС‹
    double a=0,b=0,c = 0,d=0;
-   if (prg!=2){//переменные
-      printf("Введите а: ");scanf("%lf", &a);
-      printf("Введите b: ");scanf("%lf", &b);
-      printf("Введите c: ");scanf("%lf", &c);
+   if (prg!=2){//РїРµСЂРµРјРµРЅРЅС‹Рµ
+      a=char_double("Р’РІРµРґРёС‚Рµ a: ");
+      b=char_double("Р’РІРµРґРёС‚Рµ b: ");
+      c=char_double("Р’РІРµРґРёС‚Рµ c: ");
       if (prg==3 || prg==5 || prg==6){
-         printf("Введите d: ");scanf("%lf", &d);
+         d=char_double("Р’РІРµРґРёС‚Рµ d: ");
       }
-      printf("Интеграл: ");
+      printf("РРЅС‚РµРіСЂР°Р»: ");
       for (double i=A; i<=B; i+=0.001){
 //         if (f_choose(i,a,b,c,d, prg)!=0)
          {s+=(0.001*0.5*(f_choose(i,a,b,c,d,prg)+f_choose(i+0.001,a,b,c,d,prg))); count++;}
@@ -176,11 +241,11 @@ void integral(int prg){
    else{
       double parameters[100];
       int k;
-      printf("Введите количество слагаемых: ");scanf("%d", &k);
+      k=char_int("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»Р°РіР°РµРјС‹С…: ");
       for (int j=0; j<k; j++){
-         printf("Введите %d параметр: ", j+1); scanf("%lf", &parameters[j]);
+         printf("Р’РІРµРґРёС‚Рµ %d РїР°СЂР°РјРµС‚СЂ: ", j+1); scanf("%lf", &parameters[j]);//РЅРµ СЂР°Р±РѕС‚Р°РµС‚ РІРІРѕРґ СЃ Р±СѓРєРІР°РјРё
       }
-      printf("Корни: ");
+      printf("РљРѕСЂРЅРё: ");
       for (double i=A; i<=B; i+=0.001){
          if (polynomial(i, parameters,k)==0){ printf("%lf ",polynomial(i, parameters,k)); count++;}
       }printf("\n");
@@ -195,16 +260,12 @@ void integral(int prg){
 
 
 
-void calc6()
-{
-   system("cls");
+int main(void){
    int circle=0;
    do{
       int prg=0;
-      printf("Выберите вариант функции: \n\n 1 - Cтепенная вида a*x^b+c \n 2 - Полином степени вида: a0+a1*x+a2*x^2+...+aN*x^N\n 3 - Показательная вида: a*b^(c*x)+b\n 4 - Логарифмическая вида: a*ln(b*x)+c\n 5 - Cинусоида вида: a*sin(b*x+c)+d\n 6 - Косинусоида вида: a*cos(b*x+c)+d \n\n");
       do{
-         printf("Ваш выбор: ");
-         scanf("%d", &prg);
+         prg=char_int("Р’С‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚ С„СѓРЅРєС†РёРё: \n 1 - CС‚РµРїРµРЅРЅР°СЏ РІРёРґР°: a*x^b+c \n 2 - РџРѕР»РёРЅРѕРј СЃС‚РµРїРµРЅРё РІРёРґР°: a0+a1*x+a2*x^2+...+aN*x^N\n 3 - РџРѕРєР°Р·Р°С‚РµР»СЊРЅР°СЏ РІРёРґР°: a*b^(c*x)+b\n 4 - Р›РѕРіР°СЂРёС„РјРёС‡РµСЃРєР°СЏ РІРёРґР°: a*ln(b*x)+c\n 5 - CРёРЅСѓСЃРѕРёРґР° РІРёРґР°: a*sin(b*x+c)+d\n 6 - РљРѕСЃРёРЅСѓСЃРѕРёРґР° РІРёРґР°: a*cos(b*x+c)+d \n");
          switch (prg){
             case 1: flag=1; break;
             case 2: flag=2; break;
@@ -212,21 +273,18 @@ void calc6()
             case 4: flag=4; break;
             case 5: flag=5; break;
             case 6: flag=6; break;
-            default: printf("Неверно введено значение\n"); break;}
+            default: printf("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅРѕ Р·РЅР°С‡РµРЅРёРµ\n"); break;}
       }while (prg!=1 && prg!=2 && prg!=3 && prg!=4 && prg!=5 && prg!=6);
       
       int prg1=0;
-      printf("\nВыберите тип калькулятора: \n\n 1 - Поиск экстремумов на отрезке\n 2 - Поиск корня\n 3 - Вычисление интеграла\n\n");
       do{
-          printf("Ваш выбор: ");
-         scanf("%d", &prg1);
+         prg1=char_int("Р’С‹Р±РµСЂРёС‚Рµ С‚РёРї РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР°: \n 1 - РїРѕРёСЃРє СЌРєСЃС‚СЂРµРјСѓРјРѕРІ РЅР° РѕС‚СЂРµР·РєРµ \n 2 - РїРѕРёСЃРє РєРѕСЂРЅСЏ \n 3 - РІС‹С‡РёСЃР»РµРЅРёРµ РёРЅС‚РµРіСЂР°Р»Р° \n");
          switch (prg1){
             case 1: extreme(prg); break;
             case 2: root(prg); break;
             case 3: integral(prg); break;
-            default: printf("Неверно введено значение\n"); break;}
+            default: printf("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅРѕ Р·РЅР°С‡РµРЅРёРµ\n"); break;}
       }while (prg1!=1 && prg1!=2 && prg1!=3);
-      printf("Для возврата в главное меню введите 0.\nЛюбое целое число - продолжить\n");scanf("%d\n", &circle);
+      circle=char_int("0 - РІРµСЂРЅСѓС‚СЊСЃСЏ РІ РјРµРЅСЋ;\nР»СЋР±РѕРµ РґСЂСѓРіРѕРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ - РїСЂРѕРґРѕР»Р¶РёС‚СЊ\n");
    }while (circle!=0);
-
 }
