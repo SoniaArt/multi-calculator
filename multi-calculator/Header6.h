@@ -11,5 +11,6 @@ void section(void);
 void extreme(int prg);
 void root(int prg);
 void integral(int prg);
-double char_double (char *input_str);
-int char_int(char *input_str);
+double char_double (const char *input_str);
+int char_int(const char *input_str);
+
