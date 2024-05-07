@@ -13,27 +13,27 @@
 
 
 
-double char_double(const char* input_str) {//проверка на корректность вводимости числа
+double char_double(const char* input_str) {//ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГЄГ®Г°Г°ГҐГЄГІГ­Г®Г±ГІГј ГўГўГ®Г¤ГЁГ¬Г®Г±ГІГЁ Г·ГЁГ±Г«Г 
     char y[20];
-    int flag = 0;//обозначение того, что число полностью проверено, и оно соответствует типу double
+    int flag = 0;//Г®ГЎГ®Г§Г­Г Г·ГҐГ­ГЁГҐ ГІГ®ГЈГ®, Г·ГІГ® Г·ГЁГ±Г«Г® ГЇГ®Г«Г­Г®Г±ГІГјГѕ ГЇГ°Г®ГўГҐГ°ГҐГ­Г®, ГЁ Г®Г­Г® Г±Г®Г®ГІГўГҐГІГ±ГІГўГіГҐГІ ГІГЁГЇГі double
     double y1;
     do {
-        int k_points = 0;//количество точек в строке
+        int k_points = 0;//ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®Г·ГҐГЄ Гў Г±ГІГ°Г®ГЄГҐ
         printf("%s", input_str); scanf("%s", y);
         for (int i = 0; i < strlen(y); i++) {
             if (i == 0) {
-                if (y[i] != '-' && isdigit(y[i]) == 0)//если символ не является минусом и не является цифрой
+                if (y[i] != '-' && isdigit(y[i]) == 0)//ГҐГ±Г«ГЁ Г±ГЁГ¬ГўГ®Г« Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї Г¬ГЁГ­ГіГ±Г®Г¬ ГЁ Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї Г¶ГЁГґГ°Г®Г©
                 {
                     break;
-                }//прерываем программу, чтобы вводить значение заново
+                }//ГЇГ°ГҐГ°Г»ГўГ ГҐГ¬ ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі, Г·ГІГ®ГЎГ» ГўГўГ®Г¤ГЁГІГј Г§Г­Г Г·ГҐГ­ГЁГҐ Г§Г Г­Г®ГўГ®
             }
 
             if (i > 0)
             {
-                if (y[i] != '.' && isdigit(y[i]) == 0)//если символ не является точкой и не является цифрой
+                if (y[i] != '.' && isdigit(y[i]) == 0)//ГҐГ±Г«ГЁ Г±ГЁГ¬ГўГ®Г« Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї ГІГ®Г·ГЄГ®Г© ГЁ Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї Г¶ГЁГґГ°Г®Г©
                 {
                     break;
-                }//прерываем программу, чтобы вводить значение заново
+                }//ГЇГ°ГҐГ°Г»ГўГ ГҐГ¬ ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі, Г·ГІГ®ГЎГ» ГўГўГ®Г¤ГЁГІГј Г§Г­Г Г·ГҐГ­ГЁГҐ Г§Г Г­Г®ГўГ®
             }
             if (y[i] == '.') {
                 k_points++;
@@ -51,26 +51,26 @@ double char_double(const char* input_str) {//проверка на корректность вводимости
     return y1;
 }
 
-int char_int(const char* input_str) {//проверка на корректность вводимости числа
+int char_int(const char* input_str) {//ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГЄГ®Г°Г°ГҐГЄГІГ­Г®Г±ГІГј ГўГўГ®Г¤ГЁГ¬Г®Г±ГІГЁ Г·ГЁГ±Г«Г 
     char y[20];
-    int flag = 0;//обозначение того, что число полностью проверено, и оно соответствует типу int
+    int flag = 0;//Г®ГЎГ®Г§Г­Г Г·ГҐГ­ГЁГҐ ГІГ®ГЈГ®, Г·ГІГ® Г·ГЁГ±Г«Г® ГЇГ®Г«Г­Г®Г±ГІГјГѕ ГЇГ°Г®ГўГҐГ°ГҐГ­Г®, ГЁ Г®Г­Г® Г±Г®Г®ГІГўГҐГІГ±ГІГўГіГҐГІ ГІГЁГЇГі int
     int y1;
     do {
         printf("%s", input_str); scanf("%s", y);
         for (int i = 0; i < strlen(y); i++) {
             if (i == 0) {
-                if (y[i] != '-' && isdigit(y[i]) == 0)//если символ не является минусом и не является цифрой
+                if (y[i] != '-' && isdigit(y[i]) == 0)//ГҐГ±Г«ГЁ Г±ГЁГ¬ГўГ®Г« Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї Г¬ГЁГ­ГіГ±Г®Г¬ ГЁ Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї Г¶ГЁГґГ°Г®Г©
                 {
                     break;
-                }//прерываем программу, чтобы вводить значение заново
+                }//ГЇГ°ГҐГ°Г»ГўГ ГҐГ¬ ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі, Г·ГІГ®ГЎГ» ГўГўГ®Г¤ГЁГІГј Г§Г­Г Г·ГҐГ­ГЁГҐ Г§Г Г­Г®ГўГ®
             }
 
             if (i > 0)
             {
-                if (isdigit(y[i]) == 0)//если символ не является цифрой
+                if (isdigit(y[i]) == 0)//ГҐГ±Г«ГЁ Г±ГЁГ¬ГўГ®Г« Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї Г¶ГЁГґГ°Г®Г©
                 {
                     break;
-                }//прерываем программу, чтобы вводить значение заново
+                }//ГЇГ°ГҐГ°Г»ГўГ ГҐГ¬ ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі, Г·ГІГ®ГЎГ» ГўГўГ®Г¤ГЁГІГј Г§Г­Г Г·ГҐГ­ГЁГҐ Г§Г Г­Г®ГўГ®
             }
             if (i == strlen(y) - 1)
             {
@@ -81,11 +81,11 @@ int char_int(const char* input_str) {//проверка на корректность вводимости числа
     } while (flag == 0);
     return y1;
 }
-//вынести отдельно ввод параметров, чтобы не нужно было их вводить каждый раз
+//ГўГ»Г­ГҐГ±ГІГЁ Г®ГІГ¤ГҐГ«ГјГ­Г® ГўГўГ®Г¤ ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў, Г·ГІГ®ГЎГ» Г­ГҐ Г­ГіГ¦Г­Г® ГЎГ»Г«Г® ГЁГµ ГўГўГ®Г¤ГЁГІГј ГЄГ Г¦Г¤Г»Г© Г°Г Г§
 int flag;
-int prg = 0;//выбор функции
-double A, B;//границы отрезка
-double power_function(double x, double a, double b, double c, double d) {//степенная
+int prg = 0;//ГўГ»ГЎГ®Г° ГґГіГ­ГЄГ¶ГЁГЁ
+double A, B;//ГЈГ°Г Г­ГЁГ¶Г» Г®ГІГ°ГҐГ§ГЄГ 
+double power_function(double x, double a, double b, double c, double d) {//Г±ГІГҐГЇГҐГ­Г­Г Гї
     double y;
 
     y = a * pow(x, b) + c;
@@ -93,7 +93,7 @@ double power_function(double x, double a, double b, double c, double d) {//степе
     return y;
 }
 
-double polynomial(double x, double* parameters, double k) {//полином
+double polynomial(double x, double* parameters, double k) {//ГЇГ®Г«ГЁГ­Г®Г¬
     double y = 0;
     for (int j45 = 0; j45 < k; j45++) {
         y += parameters[j45] * pow(x, j45);
@@ -102,14 +102,14 @@ double polynomial(double x, double* parameters, double k) {//полином
     return y;
 }
 
-double indicative(double x, double a, double b, double c, double d) {//показательная
+double indicative(double x, double a, double b, double c, double d) {//ГЇГ®ГЄГ Г§Г ГІГҐГ«ГјГ­Г Гї
     double y;
 
     y = a * pow(b, (c * x)) + d;
     return y;
 }
 
-double logarithmic(double x, double a, double b, double c, double d) {//логарифмическая
+double logarithmic(double x, double a, double b, double c, double d) {//Г«Г®ГЈГ Г°ГЁГґГ¬ГЁГ·ГҐГ±ГЄГ Гї
     //   while ((x*b)<0){
     //      break;
     //   }
@@ -119,21 +119,21 @@ double logarithmic(double x, double a, double b, double c, double d) {//логарифм
     return y;
 }
 
-double sine(double x, double a, double b, double c, double d) {//синусоида
+double sine(double x, double a, double b, double c, double d) {//Г±ГЁГ­ГіГ±Г®ГЁГ¤Г 
     double y;
 
     y = a * sin(b * x + c) + d;
     return y;
 }
 
-double cosine(double x, double a, double b, double c, double d) {//косинусоида
+double cosine(double x, double a, double b, double c, double d) {//ГЄГ®Г±ГЁГ­ГіГ±Г®ГЁГ¤Г 
     double y;
 
     y = a * cos(b * x + c) + d;
     return y;
 }
 
-double f_choose(double x, double a, double b, double c, double d, int prg) {//выбор ф-ции
+double f_choose(double x, double a, double b, double c, double d, int prg) {//ГўГ»ГЎГ®Г° Гґ-Г¶ГЁГЁ
     double y;
     switch (prg) {
     case 1: y = power_function(x, a, b, c, d); break;
@@ -145,39 +145,39 @@ double f_choose(double x, double a, double b, double c, double d, int prg) {//вы
     return y;
 }
 
-void section(void) {//отрезок работы над функцией
+void section(void) {//Г®ГІГ°ГҐГ§Г®ГЄ Г°Г ГЎГ®ГІГ» Г­Г Г¤ ГґГіГ­ГЄГ¶ГЁГҐГ©
     do {
-        A = char_double("Введите первую крайнюю точку отрезка: ");
-        B = char_double("Введите вторую крайнюю точку отрезка: ");
+        A = char_double("Г‚ГўГҐГ¤ГЁГІГҐ ГЇГҐГ°ГўГіГѕ ГЄГ°Г Г©Г­ГѕГѕ ГІГ®Г·ГЄГі Г®ГІГ°ГҐГ§ГЄГ : ");
+        B = char_double("Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°ГіГѕ ГЄГ°Г Г©Г­ГѕГѕ ГІГ®Г·ГЄГі Г®ГІГ°ГҐГ§ГЄГ : ");
         if (A > B) {
             int n;
             n = A; A = B; B = n;
         }
         if (A >= B - 0.01) {
-            printf("Слишком близкие значения, попробуйте снова");
+            printf("Г‘Г«ГЁГёГЄГ®Г¬ ГЎГ«ГЁГ§ГЄГЁГҐ Г§Г­Г Г·ГҐГ­ГЁГї, ГЇГ®ГЇГ°Г®ГЎГіГ©ГІГҐ Г±Г­Г®ГўГ ");
         }
     } while (A > B - 0.01);
 }
 
 int SDL_powF(void) {
     section();
-    //общая часть
+    //Г®ГЎГ№Г Гї Г·Г Г±ГІГј
     double a = 0, b = 0, c = 0, d = 0;
-    if (prg != 2) {//переменные
-        a = char_double("Введите a: ");
-        b = char_double("Введите b: ");
-        c = char_double("Введите c: ");
+    if (prg != 2) {//ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ
+        a = char_double("Г‚ГўГҐГ¤ГЁГІГҐ a: ");
+        b = char_double("Г‚ГўГҐГ¤ГЁГІГҐ b: ");
+        c = char_double("Г‚ГўГҐГ¤ГЁГІГҐ c: ");
     }
-    if ((((int)b) != b)) {//не целое
-        if (B < 0) { printf("невозможно построить график\n"); return -1; }
+    if ((((int)b) != b)) {//Г­ГҐ Г¶ГҐГ«Г®ГҐ
+        if (B < 0) { printf("Г­ГҐГўГ®Г§Г¬Г®Г¦Г­Г® ГЇГ®Г±ГІГ°Г®ГЁГІГј ГЈГ°Г ГґГЁГЄ\n"); return -1; }
         if (B > 0 && A <= 0) { A = 0; printf("&&"); }
     }
     //    else{
     //        double parameters[100];
     //        int k1;
-    //        k1=char_int("Введите количество слагаемых: ");
+    //        k1=char_int("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г ГЈГ ГҐГ¬Г»Гµ: ");
     //        for (int j=0; j<k1; j++){
-    //            printf("Введите %d параметр: ", j+1); scanf("%lf", &parameters[j]);//не работает ввод с буквами
+    //            printf("Г‚ГўГҐГ¤ГЁГІГҐ %d ГЇГ Г°Г Г¬ГҐГІГ°: ", j+1); scanf("%lf", &parameters[j]);//Г­ГҐ Г°Г ГЎГ®ГІГ ГҐГІ ГўГўГ®Г¤ Г± ГЎГіГЄГўГ Г¬ГЁ
     //        }
     //    }
 
@@ -215,49 +215,49 @@ int SDL_powF(void) {
             }
         }
 
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // устанавливаем цвет на белый
-        SDL_RenderClear(renderer); // очищаем экран
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  ГЎГҐГ«Г»Г©
+        SDL_RenderClear(renderer); // Г®Г·ГЁГ№Г ГҐГ¬ ГЅГЄГ°Г Г­
 
-        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // устанавливаем цвет на #bed2f7
+        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  #bed2f7
 
-        //клетка
+        //ГЄГ«ГҐГІГЄГ 
         for (int i = 400; i < 800; i += k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
         for (int i = 400; i > 0; i -= k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
 
         for (int i = 300; i < 600; i += 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
         for (int i = 300; i > 0; i -= 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
 
 //        for (int i=0; i<800; i+=k){
-//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//ось oy
+//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//Г®Г±Гј oy
 //        for (int i=0; i<600; i+=20){
-//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//ось ox
+//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//Г®Г±Гј ox
 
-        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // устанавливаем цвет на серый
+        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  Г±ГҐГ°Г»Г©
 
-        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//ось оy
+        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//Г®Г±Гј Г®y
 
-        //cтрелка на ось ох
-        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//ось ох
+        //cГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//Г®Г±Гј Г®Гµ
 
-        //стрелка на ось оу
-        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//ось оу
-        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//ось оу
+        //Г±ГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//Г®Г±Гј Г®Гі
 
 
-        //косинусоида
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // устанавливаем цвет чёрный
+        //ГЄГ®Г±ГЁГ­ГіГ±Г®ГЁГ¤Г 
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г·ВёГ°Г­Г»Г©
         for (double i = A; i < B; i++) {
-            //добавить возможность менять в зависимости от выбора пользователем диапазона. k=20 при диап от -10 до +10
+            //Г¤Г®ГЎГ ГўГЁГІГј ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГј Г¬ГҐГ­ГїГІГј Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ ГўГ»ГЎГ®Г°Г  ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬ Г¤ГЁГ ГЇГ Г§Г®Г­Г . k=20 ГЇГ°ГЁ Г¤ГЁГ ГЇ Г®ГІ -10 Г¤Г® +10
             for (int j = 0; j < k; j++) {
 
                 //                    int x1=k*i+j+400;
@@ -269,7 +269,7 @@ int SDL_powF(void) {
             }
         }
 
-        SDL_RenderPresent(renderer); // обновляем экран
+        SDL_RenderPresent(renderer); // Г®ГЎГ­Г®ГўГ«ГїГҐГ¬ ГЅГЄГ°Г Г­
 
     }
 
@@ -285,15 +285,15 @@ int SDL_powF(void) {
 
 int SDL_pol(void) {
     section();
-    //общая часть
+    //Г®ГЎГ№Г Гї Г·Г Г±ГІГј
     double a = 0, b = 0, c = 0, d = 0;
 
 
     double parameters[100];
     int k1;
-    k1 = char_int("Введите количество слагаемых: ");
+    k1 = char_int("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г ГЈГ ГҐГ¬Г»Гµ: ");
     for (int j = 0; j < k1; j++) {
-        printf("Введите %d параметр: ", j + 1); scanf("%lf", &parameters[j]);//не работает ввод с буквами
+        printf("Г‚ГўГҐГ¤ГЁГІГҐ %d ГЇГ Г°Г Г¬ГҐГІГ°: ", j + 1); scanf("%lf", &parameters[j]);//Г­ГҐ Г°Г ГЎГ®ГІГ ГҐГІ ГўГўГ®Г¤ Г± ГЎГіГЄГўГ Г¬ГЁ
     }
 
 
@@ -331,51 +331,51 @@ int SDL_pol(void) {
             }
         }
 
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // устанавливаем цвет на белый
-        SDL_RenderClear(renderer); // очищаем экран
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  ГЎГҐГ«Г»Г©
+        SDL_RenderClear(renderer); // Г®Г·ГЁГ№Г ГҐГ¬ ГЅГЄГ°Г Г­
 
-        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // устанавливаем цвет на #bed2f7
+        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  #bed2f7
 
-        //клетка
+        //ГЄГ«ГҐГІГЄГ 
         for (int i = 400; i < 800; i += k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
         for (int i = 400; i > 0; i -= k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
 
         for (int i = 300; i < 600; i += 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
         for (int i = 300; i > 0; i -= 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
 
 //        for (int i=0; i<800; i+=k){
-//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//ось oy
+//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//Г®Г±Гј oy
 //        for (int i=0; i<600; i+=20){
-//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//ось ox
+//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//Г®Г±Гј ox
 
-        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // устанавливаем цвет на серый
+        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  Г±ГҐГ°Г»Г©
 
-        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//ось оy
+        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//Г®Г±Гј Г®y
 
-        //cтрелка на ось ох
-        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//ось ох
+        //cГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//Г®Г±Гј Г®Гµ
 
-        //стрелка на ось оу
-        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//ось оу
-        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//ось оу
+        //Г±ГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//Г®Г±Гј Г®Гі
 
 
-        //косинусоида
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // устанавливаем цвет чёрный
+        //ГЄГ®Г±ГЁГ­ГіГ±Г®ГЁГ¤Г 
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г·ВёГ°Г­Г»Г©
         for (double i = A; i < B; i++) {
             int schet = 0;
 
-            //добавить возможность менять в зависимости от выбора пользователем диапазона. k=20 при диап от -10 до +10
+            //Г¤Г®ГЎГ ГўГЁГІГј ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГј Г¬ГҐГ­ГїГІГј Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ ГўГ»ГЎГ®Г°Г  ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬ Г¤ГЁГ ГЇГ Г§Г®Г­Г . k=20 ГЇГ°ГЁ Г¤ГЁГ ГЇ Г®ГІ -10 Г¤Г® +10
             for (int j = 0; j < k; j++) {
 
                 int x1 = k * i + j + 400;
@@ -389,7 +389,7 @@ int SDL_pol(void) {
             }
         }
 
-        SDL_RenderPresent(renderer); // обновляем экран
+        SDL_RenderPresent(renderer); // Г®ГЎГ­Г®ГўГ«ГїГҐГ¬ ГЅГЄГ°Г Г­
 
     }
 
@@ -404,22 +404,22 @@ int SDL_pol(void) {
 
 int SDL_ind(void) {
     section();
-    //общая часть
+    //Г®ГЎГ№Г Гї Г·Г Г±ГІГј
     double a = 0, b = 0, c = 0, d = 0;
-    if (prg != 2) {//переменные
-        a = char_double("Введите a: ");
+    if (prg != 2) {//ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ
+        a = char_double("Г‚ГўГҐГ¤ГЁГІГҐ a: ");
         do {
-            b = char_double("Введите b: ");
+            b = char_double("Г‚ГўГҐГ¤ГЁГІГҐ b: ");
         } while (b <= 0 || b == 1);
-        c = char_double("Введите c: ");
-        d = char_double("Введите d: ");
+        c = char_double("Г‚ГўГҐГ¤ГЁГІГҐ c: ");
+        d = char_double("Г‚ГўГҐГ¤ГЁГІГҐ d: ");
     }
     else {
         double parameters[100];
         int k1;
-        k1 = char_int("Введите количество слагаемых: ");
+        k1 = char_int("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г ГЈГ ГҐГ¬Г»Гµ: ");
         for (int j = 0; j < k1; j++) {
-            printf("Введите %d параметр: ", j + 1); scanf("%lf", &parameters[j]);//не работает ввод с буквами
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ %d ГЇГ Г°Г Г¬ГҐГІГ°: ", j + 1); scanf("%lf", &parameters[j]);//Г­ГҐ Г°Г ГЎГ®ГІГ ГҐГІ ГўГўГ®Г¤ Г± ГЎГіГЄГўГ Г¬ГЁ
         }
     }
 
@@ -457,49 +457,49 @@ int SDL_ind(void) {
             }
         }
 
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // устанавливаем цвет на белый
-        SDL_RenderClear(renderer); // очищаем экран
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  ГЎГҐГ«Г»Г©
+        SDL_RenderClear(renderer); // Г®Г·ГЁГ№Г ГҐГ¬ ГЅГЄГ°Г Г­
 
-        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // устанавливаем цвет на #bed2f7
+        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  #bed2f7
 
-        //клетка
+        //ГЄГ«ГҐГІГЄГ 
         for (int i = 400; i < 800; i += k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
         for (int i = 400; i > 0; i -= k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
 
         for (int i = 300; i < 600; i += 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
         for (int i = 300; i > 0; i -= 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
 
 //        for (int i=0; i<800; i+=k){
-//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//ось oy
+//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//Г®Г±Гј oy
 //        for (int i=0; i<600; i+=20){
-//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//ось ox
+//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//Г®Г±Гј ox
 
-        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // устанавливаем цвет на серый
+        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  Г±ГҐГ°Г»Г©
 
-        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//ось оy
+        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//Г®Г±Гј Г®y
 
-        //cтрелка на ось ох
-        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//ось ох
+        //cГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//Г®Г±Гј Г®Гµ
 
-        //стрелка на ось оу
-        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//ось оу
-        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//ось оу
+        //Г±ГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//Г®Г±Гј Г®Гі
 
 
-        //косинусоида
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // устанавливаем цвет чёрный
+        //ГЄГ®Г±ГЁГ­ГіГ±Г®ГЁГ¤Г 
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г·ВёГ°Г­Г»Г©
         for (double i = A; i < B; i++) {
-            //добавить возможность менять в зависимости от выбора пользователем диапазона. k=20 при диап от -10 до +10
+            //Г¤Г®ГЎГ ГўГЁГІГј ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГј Г¬ГҐГ­ГїГІГј Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ ГўГ»ГЎГ®Г°Г  ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬ Г¤ГЁГ ГЇГ Г§Г®Г­Г . k=20 ГЇГ°ГЁ Г¤ГЁГ ГЇ Г®ГІ -10 Г¤Г® +10
             for (int j = 0; j < k; j++) {
 
                 //                    int x1=k*i+j+400;
@@ -511,7 +511,7 @@ int SDL_ind(void) {
             }
         }
 
-        SDL_RenderPresent(renderer); // обновляем экран
+        SDL_RenderPresent(renderer); // Г®ГЎГ­Г®ГўГ«ГїГҐГ¬ ГЅГЄГ°Г Г­
 
     }
 
@@ -528,24 +528,24 @@ int SDL_ind(void) {
 
 int SDL_ln(void) {
     section();
-    //общая часть
+    //Г®ГЎГ№Г Гї Г·Г Г±ГІГј
     double a = 0, b = 0, c = 0, d = 0;
-    if (prg != 2) {//переменные
-        a = char_double("Введите a: ");
-        b = char_double("Введите b: ");
-        c = char_double("Введите c: ");
+    if (prg != 2) {//ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ
+        a = char_double("Г‚ГўГҐГ¤ГЁГІГҐ a: ");
+        b = char_double("Г‚ГўГҐГ¤ГЁГІГҐ b: ");
+        c = char_double("Г‚ГўГҐГ¤ГЁГІГҐ c: ");
     }
     else {
         double parameters[100];
         int k1;
-        k1 = char_int("Введите количество слагаемых: ");
+        k1 = char_int("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г ГЈГ ГҐГ¬Г»Гµ: ");
         for (int j = 0; j < k1; j++) {
-            printf("Введите %d параметр: ", j + 1); scanf("%lf", &parameters[j]);//не работает ввод с буквами
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ %d ГЇГ Г°Г Г¬ГҐГІГ°: ", j + 1); scanf("%lf", &parameters[j]);//Г­ГҐ Г°Г ГЎГ®ГІГ ГҐГІ ГўГўГ®Г¤ Г± ГЎГіГЄГўГ Г¬ГЁ
         }
     }
-    if (b > 0 && B < 0) { printf("невозможно построить график\n"); return -1; }
+    if (b > 0 && B < 0) { printf("Г­ГҐГўГ®Г§Г¬Г®Г¦Г­Г® ГЇГ®Г±ГІГ°Г®ГЁГІГј ГЈГ°Г ГґГЁГЄ\n"); return -1; }
     if (b > 0 && A < 0) { A = 0; }
-    if (b < 0 && A>0) { printf("невозможно построить график\n"); return -1; }
+    if (b < 0 && A>0) { printf("Г­ГҐГўГ®Г§Г¬Г®Г¦Г­Г® ГЇГ®Г±ГІГ°Г®ГЁГІГј ГЈГ°Г ГґГЁГЄ\n"); return -1; }
     if (b < 0 && B>0) { B = 0; }
 
     ///////////////////////////////
@@ -582,49 +582,49 @@ int SDL_ln(void) {
             }
         }
 
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // устанавливаем цвет на белый
-        SDL_RenderClear(renderer); // очищаем экран
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  ГЎГҐГ«Г»Г©
+        SDL_RenderClear(renderer); // Г®Г·ГЁГ№Г ГҐГ¬ ГЅГЄГ°Г Г­
 
-        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // устанавливаем цвет на #bed2f7
+        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  #bed2f7
 
-        //клетка
+        //ГЄГ«ГҐГІГЄГ 
         for (int i = 400; i < 800; i += k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
         for (int i = 400; i > 0; i -= k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
 
         for (int i = 300; i < 600; i += 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
         for (int i = 300; i > 0; i -= 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
 
 //        for (int i=0; i<800; i+=k){
-//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//ось oy
+//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//Г®Г±Гј oy
 //        for (int i=0; i<600; i+=20){
-//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//ось ox
+//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//Г®Г±Гј ox
 
-        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // устанавливаем цвет на серый
+        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  Г±ГҐГ°Г»Г©
 
-        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//ось оy
+        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//Г®Г±Гј Г®y
 
-        //cтрелка на ось ох
-        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//ось ох
+        //cГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//Г®Г±Гј Г®Гµ
 
-        //стрелка на ось оу
-        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//ось оу
-        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//ось оу
+        //Г±ГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//Г®Г±Гј Г®Гі
 
 
-        //косинусоида
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // устанавливаем цвет чёрный
+        //ГЄГ®Г±ГЁГ­ГіГ±Г®ГЁГ¤Г 
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г·ВёГ°Г­Г»Г©
         for (double i = A; i < B; i++) {
-            //добавить возможность менять в зависимости от выбора пользователем диапазона. k=20 при диап от -10 до +10
+            //Г¤Г®ГЎГ ГўГЁГІГј ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГј Г¬ГҐГ­ГїГІГј Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ ГўГ»ГЎГ®Г°Г  ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬ Г¤ГЁГ ГЇГ Г§Г®Г­Г . k=20 ГЇГ°ГЁ Г¤ГЁГ ГЇ Г®ГІ -10 Г¤Г® +10
             for (int j = 0; j < k; j++) {
 
                 //                    int x1=k*i+j+400;
@@ -636,7 +636,7 @@ int SDL_ln(void) {
             }
         }
 
-        SDL_RenderPresent(renderer); // обновляем экран
+        SDL_RenderPresent(renderer); // Г®ГЎГ­Г®ГўГ«ГїГҐГ¬ ГЅГЄГ°Г Г­
 
     }
 
@@ -651,20 +651,20 @@ int SDL_ln(void) {
 
 int SDL_sine(void) {
     section();
-    //общая часть
+    //Г®ГЎГ№Г Гї Г·Г Г±ГІГј
     double a = 0, b = 0, c = 0, d = 0;
-    if (prg != 2) {//переменные
-        a = char_double("Введите a: ");
-        b = char_double("Введите b: ");
-        c = char_double("Введите c: ");
-        d = char_double("Введите d: ");
+    if (prg != 2) {//ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ
+        a = char_double("Г‚ГўГҐГ¤ГЁГІГҐ a: ");
+        b = char_double("Г‚ГўГҐГ¤ГЁГІГҐ b: ");
+        c = char_double("Г‚ГўГҐГ¤ГЁГІГҐ c: ");
+        d = char_double("Г‚ГўГҐГ¤ГЁГІГҐ d: ");
     }
     else {
         double parameters[100];
         int k1;
-        k1 = char_int("Введите количество слагаемых: ");
+        k1 = char_int("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г ГЈГ ГҐГ¬Г»Гµ: ");
         for (int j = 0; j < k1; j++) {
-            printf("Введите %d параметр: ", j + 1); scanf("%lf", &parameters[j]);//не работает ввод с буквами
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ %d ГЇГ Г°Г Г¬ГҐГІГ°: ", j + 1); scanf("%lf", &parameters[j]);//Г­ГҐ Г°Г ГЎГ®ГІГ ГҐГІ ГўГўГ®Г¤ Г± ГЎГіГЄГўГ Г¬ГЁ
         }
     }
 
@@ -702,49 +702,49 @@ int SDL_sine(void) {
             }
         }
 
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // устанавливаем цвет на белый
-        SDL_RenderClear(renderer); // очищаем экран
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  ГЎГҐГ«Г»Г©
+        SDL_RenderClear(renderer); // Г®Г·ГЁГ№Г ГҐГ¬ ГЅГЄГ°Г Г­
 
-        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // устанавливаем цвет на #bed2f7
+        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  #bed2f7
 
-        //клетка
+        //ГЄГ«ГҐГІГЄГ 
         for (int i = 400; i < 800; i += k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
         for (int i = 400; i > 0; i -= k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
 
         for (int i = 300; i < 600; i += 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
         for (int i = 300; i > 0; i -= 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
 
 //        for (int i=0; i<800; i+=k){
-//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//ось oy
+//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//Г®Г±Гј oy
 //        for (int i=0; i<600; i+=20){
-//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//ось ox
+//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//Г®Г±Гј ox
 
-        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // устанавливаем цвет на серый
+        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  Г±ГҐГ°Г»Г©
 
-        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//ось оy
+        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//Г®Г±Гј Г®y
 
-        //cтрелка на ось ох
-        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//ось ох
+        //cГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//Г®Г±Гј Г®Гµ
 
-        //стрелка на ось оу
-        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//ось оу
-        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//ось оу
+        //Г±ГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//Г®Г±Гј Г®Гі
 
 
-        //косинусоида
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // устанавливаем цвет чёрный
+        //ГЄГ®Г±ГЁГ­ГіГ±Г®ГЁГ¤Г 
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г·ВёГ°Г­Г»Г©
         for (double i = A; i < B; i++) {
-            //добавить возможность менять в зависимости от выбора пользователем диапазона. k=20 при диап от -10 до +10
+            //Г¤Г®ГЎГ ГўГЁГІГј ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГј Г¬ГҐГ­ГїГІГј Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ ГўГ»ГЎГ®Г°Г  ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬ Г¤ГЁГ ГЇГ Г§Г®Г­Г . k=20 ГЇГ°ГЁ Г¤ГЁГ ГЇ Г®ГІ -10 Г¤Г® +10
             for (int j = 0; j < k; j++) {
 
                 //                    int x1=k*i+j+400;
@@ -756,7 +756,7 @@ int SDL_sine(void) {
             }
         }
 
-        SDL_RenderPresent(renderer); // обновляем экран
+        SDL_RenderPresent(renderer); // Г®ГЎГ­Г®ГўГ«ГїГҐГ¬ ГЅГЄГ°Г Г­
 
     }
 
@@ -773,20 +773,20 @@ int SDL_sine(void) {
 
 int SDL_cosine(void) {
     section();
-    //общая часть
+    //Г®ГЎГ№Г Гї Г·Г Г±ГІГј
     double a = 0, b = 0, c = 0, d = 0;
-    if (prg != 2) {//переменные
-        a = char_double("Введите a: ");
-        b = char_double("Введите b: ");
-        c = char_double("Введите c: ");
-        d = char_double("Введите d: ");
+    if (prg != 2) {//ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ
+        a = char_double("Г‚ГўГҐГ¤ГЁГІГҐ a: ");
+        b = char_double("Г‚ГўГҐГ¤ГЁГІГҐ b: ");
+        c = char_double("Г‚ГўГҐГ¤ГЁГІГҐ c: ");
+        d = char_double("Г‚ГўГҐГ¤ГЁГІГҐ d: ");
     }
     else {
         double parameters[100];
         int k1;
-        k1 = char_int("Введите количество слагаемых: ");
+        k1 = char_int("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г ГЈГ ГҐГ¬Г»Гµ: ");
         for (int j = 0; j < k1; j++) {
-            printf("Введите %d параметр: ", j + 1); scanf("%lf", &parameters[j]);//не работает ввод с буквами
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ %d ГЇГ Г°Г Г¬ГҐГІГ°: ", j + 1); scanf("%lf", &parameters[j]);//Г­ГҐ Г°Г ГЎГ®ГІГ ГҐГІ ГўГўГ®Г¤ Г± ГЎГіГЄГўГ Г¬ГЁ
         }
     }
 
@@ -824,49 +824,49 @@ int SDL_cosine(void) {
             }
         }
 
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // устанавливаем цвет на белый
-        SDL_RenderClear(renderer); // очищаем экран
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  ГЎГҐГ«Г»Г©
+        SDL_RenderClear(renderer); // Г®Г·ГЁГ№Г ГҐГ¬ ГЅГЄГ°Г Г­
 
-        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // устанавливаем цвет на #bed2f7
+        SDL_SetRenderDrawColor(renderer, 190, 210, 247, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  #bed2f7
 
-        //клетка
+        //ГЄГ«ГҐГІГЄГ 
         for (int i = 400; i < 800; i += k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
         for (int i = 400; i > 0; i -= k) {
             SDL_RenderDrawLine(renderer, i, 0, i, 600);
-        }//ось oy
+        }//Г®Г±Гј oy
 
         for (int i = 300; i < 600; i += 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
         for (int i = 300; i > 0; i -= 20) {
             SDL_RenderDrawLine(renderer, 0, i, 800, i);
-        }//ось ox
+        }//Г®Г±Гј ox
 
 //        for (int i=0; i<800; i+=k){
-//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//ось oy
+//            SDL_RenderDrawLine(renderer, i, 0, i, 600);}//Г®Г±Гј oy
 //        for (int i=0; i<600; i+=20){
-//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//ось ox
+//            SDL_RenderDrawLine(renderer, 0, i, 800, i);}//Г®Г±Гј ox
 
-        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // устанавливаем цвет на серый
+        SDL_SetRenderDrawColor(renderer, 100, 100, 100, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г­Г  Г±ГҐГ°Г»Г©
 
-        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//ось оy
+        SDL_RenderDrawLine(renderer, 200, 300, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 400, 100, 400, 500);//Г®Г±Гј Г®y
 
-        //cтрелка на ось ох
-        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//ось ох
-        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//ось ох
+        //cГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 295, 600, 300);//Г®Г±Гј Г®Гµ
+        SDL_RenderDrawLine(renderer, 590, 305, 600, 300);//Г®Г±Гј Г®Гµ
 
-        //стрелка на ось оу
-        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//ось оу
-        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//ось оу
+        //Г±ГІГ°ГҐГ«ГЄГ  Г­Г  Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 395, 110, 400, 100);//Г®Г±Гј Г®Гі
+        SDL_RenderDrawLine(renderer, 405, 110, 400, 100);//Г®Г±Гј Г®Гі
 
 
-        //косинусоида
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // устанавливаем цвет чёрный
+        //ГЄГ®Г±ГЁГ­ГіГ±Г®ГЁГ¤Г 
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г¶ГўГҐГІ Г·ВёГ°Г­Г»Г©
         for (double i = A; i < B; i++) {
-            //добавить возможность менять в зависимости от выбора пользователем диапазона. k=20 при диап от -10 до +10
+            //Г¤Г®ГЎГ ГўГЁГІГј ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГј Г¬ГҐГ­ГїГІГј Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ ГўГ»ГЎГ®Г°Г  ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬ Г¤ГЁГ ГЇГ Г§Г®Г­Г . k=20 ГЇГ°ГЁ Г¤ГЁГ ГЇ Г®ГІ -10 Г¤Г® +10
             for (int j = 0; j < k; j++) {
 
                 //                    int x1=k*i+j+400;
@@ -878,7 +878,7 @@ int SDL_cosine(void) {
             }
         }
 
-        SDL_RenderPresent(renderer); // обновляем экран
+        SDL_RenderPresent(renderer); // Г®ГЎГ­Г®ГўГ«ГїГҐГ¬ ГЅГЄГ°Г Г­
 
     }
 
@@ -892,38 +892,38 @@ int SDL_cosine(void) {
     return 0;
 }
 
-void extreme(int prg) {//экстремумы
-    section();//отрезок выбран
+void extreme(int prg) {//ГЅГЄГ±ГІГ°ГҐГ¬ГіГ¬Г»
+    section();//Г®ГІГ°ГҐГ§Г®ГЄ ГўГ»ГЎГ°Г Г­
     int count = 0;
     double a = 0, b = 0, c = 0, d = 0;
     if (prg != 2) {
-        a = char_double("Введите а: ");
-        b = char_double("Введите b: ");
-        c = char_double("Введите c: ");
+        a = char_double("Г‚ГўГҐГ¤ГЁГІГҐ Г : ");
+        b = char_double("Г‚ГўГҐГ¤ГЁГІГҐ b: ");
+        c = char_double("Г‚ГўГҐГ¤ГЁГІГҐ c: ");
         if (prg == 3 || prg == 5 || prg == 6) {
-            d = char_double("Введите d: ");
+            d = char_double("Г‚ГўГҐГ¤ГЁГІГҐ d: ");
         }
-        printf("Экстремумы: ");
+        printf("ГќГЄГ±ГІГ°ГҐГ¬ГіГ¬Г»: ");
         for (double i = A + 0.01; i <= B; i += 0.01) {
             if ((f_choose(i - 0.01, a, b, c, d, prg) > f_choose(i, a, b, c, d, prg) && f_choose(i + 0.01, a, b, c, d, prg) > f_choose(i, a, b, c, d, prg)) || (f_choose(i - 0.01, a, b, c, d, prg) < f_choose(i, a, b, c, d, prg) && f_choose(i + 0.01, a, b, c, d, prg) < f_choose(i, a, b, c, d, prg))) { printf("%lf ", f_choose(i, a, b, c, d, prg)); count++; }
         }printf("\n");
         if (count == 0) {
-            printf("Эксремумов нет\n");
+            printf("ГќГЄГ±Г°ГҐГ¬ГіГ¬Г®Гў Г­ГҐГІ\n");
         }
     }
     else {
         double parameters[100];
         int k;
-        k = char_int("Введите количество слагаемых: ");
+        k = char_int("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г ГЈГ ГҐГ¬Г»Гµ: ");
         for (int j = 0; j < k; j++) {
-            printf("Введите %d параметр: ", j + 1); scanf("%lf", &parameters[j]);//j+1=char_double("Введите следующий параметр: ");
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ %d ГЇГ Г°Г Г¬ГҐГІГ°: ", j + 1); scanf("%lf", &parameters[j]);//j+1=char_double("Г‚ГўГҐГ¤ГЁГІГҐ Г±Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ Г°Г Г¬ГҐГІГ°: ");
         }
-        printf("Экстремумы: ");
+        printf("ГќГЄГ±ГІГ°ГҐГ¬ГіГ¬Г»: ");
         for (double i = A + 0.01; i <= B; i += 0.01) {
             if ((polynomial(i - 0.01, parameters, k) > polynomial(i, parameters, k) && polynomial(i + 0.01, parameters, k) > polynomial(i, parameters, k)) || ((polynomial(i - 0.01, parameters, k)) < polynomial(i, parameters, k) && polynomial(i + 0.01, parameters, k) < polynomial(i, parameters, k))) { printf("%lf ", polynomial(i, parameters, k)); count++; }
         }printf("\n");
         if (count == 0) {
-            printf("Эксремумов нет\n");
+            printf("ГќГЄГ±Г°ГҐГ¬ГіГ¬Г®Гў Г­ГҐГІ\n");
         }
 
     }
@@ -931,107 +931,78 @@ void extreme(int prg) {//экстремумы
 
 
 
-void root(int prg) {//корни
-    section();//отрезок выбран
+void root(int prg) {//ГЄГ®Г°Г­ГЁ
+    section();//Г®ГІГ°ГҐГ§Г®ГЄ ГўГ»ГЎГ°Г Г­
     int count = 0;
     double a = 0, b = 0, c = 0, d = 0;
-    if (prg != 2) {//переменные
-        a = char_double("Введите a: ");
-        b = char_double("Введите b: ");
-        c = char_double("Введите c: ");
+    if (prg != 2) {//ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ
+        a = char_double("Г‚ГўГҐГ¤ГЁГІГҐ a: ");
+        b = char_double("Г‚ГўГҐГ¤ГЁГІГҐ b: ");
+        c = char_double("Г‚ГўГҐГ¤ГЁГІГҐ c: ");
         if (prg == 3 || prg == 5 || prg == 6) {
-            d = char_double("Введите d: ");
+            d = char_double("Г‚ГўГҐГ¤ГЁГІГҐ d: ");
         }
-        printf("Корни: ");
+        printf("ГЉГ®Г°Г­ГЁ: ");
         for (double i = A + 0.01; i <= B; i += 0.01) {
             if (fabs(f_choose(i, a, b, c, d, prg)) <= 0.001) { printf("%lf ", i); count++; }
         }printf("\n");
         if (count == 0) {
-            printf("Корней нет\n");
+            printf("ГЉГ®Г°Г­ГҐГ© Г­ГҐГІ\n");
         }
     }
     else {
         double parameters[100];
         int k;
-        k = char_int("Введите количество слагаемых: ");
+        k = char_int("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г ГЈГ ГҐГ¬Г»Гµ: ");
         for (int j = 0; j < k; j++) {
-            printf("Введите %d параметр: ", j + 1); scanf("%lf", &parameters[j]);
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ %d ГЇГ Г°Г Г¬ГҐГІГ°: ", j + 1); scanf("%lf", &parameters[j]);
         }
-        printf("Корни: ");
+        printf("ГЉГ®Г°Г­ГЁ: ");
         for (double i = A + 0.01; i <= B; i += 0.01) {
             if (fabs(polynomial(i, parameters, k)) <= 0.0001) { printf("%lf ", polynomial(i, parameters, k)); count++; }
         }printf("\n");
         if (count == 0) {
-            printf("Корней нет\n");
+            printf("ГЉГ®Г°Г­ГҐГ© Г­ГҐГІ\n");
         }
 
     }
 }
-int integral(int prg) {//интегралы
-    section();//отрезок выбран
-    int count = 0;
-    double s = 0;//gлощадь фигуры
-    double a = 0, b = 0, c = 0, d = 0;
-    if (prg != 2) {//переменные
-        if (prg == 3) {
-            do {
-                a = char_double("Введите a: ");
-            } while (a < 0 || a == 1);
-        }
-        else {
-            a = char_double("Введите a: ");
-        }
-
-        b = char_double("Введите b: ");
-        c = char_double("Введите c: ");
-        if (prg == 3 || prg == 5 || prg == 6) {
-            d = char_double("Введите d: ");
-        }
-        printf("Интеграл: ");
-        //проверка логарифма
-        if (prg == 4) {
-            if (b < 0 && A>0) { printf("Ошибка. Невозможно вычислить интеграл\n"); return 0; }
-            if (b < 0 && A < 0 && B>0) { B = 0; }
-            if (b > 0 && B < 0) { printf("Ошибка. Невозможно вычислить интеграл\n"); return 0; }
-            if (b > 0 && A < 0 && B>0) { A = 0; }
-
-        }
-        //проверка степенной
-        if (prg == 1) {
-            if (b < 0 && A <= 0 && B >= 0) { printf("Ошибка. Невозможно вычислить интеграл\n"); return 0; }
-            if ((int)b != b) {
-                if (A <= 0 && B >= 0) A = 0;
-                if (B <= 0) { printf("Ошибка. Невозможно вычислить интеграл\n"); return 0; }
-            }
-        }
-        //проверка показательной
-        if (prg == 3) {
-
-        }
-        for (double i = A; i <= B; i += 0.001) {
-            //         if (f_choose(i,a,b,c,d, prg)!=0)
-            {s += (0.001 * 0.5 * (f_choose(i, a, b, c, d, prg) + f_choose(i + 0.001, a, b, c, d, prg))); count++; }
-        }printf("%f\n", s);
-    }
-    else {
-        double parameters[100];
-        int k;
-        k = char_int("Введите количество слагаемых: ");
-        for (int j = 0; j < k; j++) {
-            printf("Введите %d параметр: ", j + 1); scanf("%lf", &parameters[j]);//не работает ввод с буквами
-        }
-        printf("Интергал: ");
-        for (double i = A; i <= B; i += 0.001) {
-            if (polynomial(i, parameters, k) == 0) { printf("%lf ", polynomial(i, parameters, k)); count++; }
-        }printf("\n");
-        for (double i = A; i <= B; i += 0.001) {
-            //         if (f_choose(i,a,b,c,d, prg)!=0)
-            {s += (0.001 * 0.5 * (polynomial(i, parameters, k) + polynomial(i + 0.001, parameters, k))); count++; }
-        }printf("%f\n", s);
+void integral(int prg){
+   section();//Г®ГІГ°ГҐГ§Г®ГЄ ГўГ»ГЎГ°Г Г­
+   int count=0;
+   double s=0;//gГ«Г®Г№Г Г¤Гј ГґГЁГЈГіГ°Г»
+   double a=0,b=0,c = 0,d=0;
+   if (prg!=2){//ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ
+      a=char_double("Г‚ГўГҐГ¤ГЁГІГҐ a: ");
+      b=char_double("Г‚ГўГҐГ¤ГЁГІГҐ b: ");
+      c=char_double("Г‚ГўГҐГ¤ГЁГІГҐ c: ");
+      if (prg==3 || prg==5 || prg==6){
+         d=char_double("Г‚ГўГҐГ¤ГЁГІГҐ d: ");
+      }
+      printf("Г€Г­ГІГҐГЈГ°Г Г«: ");
+      for (double i=A; i<=B; i+=0.001){
+//         if (f_choose(i,a,b,c,d, prg)!=0)
+         {s+=(0.001*0.5*(f_choose(i,a,b,c,d,prg)+f_choose(i+0.001,a,b,c,d,prg))); count++;}
+      }printf("%f\n", s);
+   }
+   else{
+      double parameters[100];
+      int k;
+      k=char_int("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г ГЈГ ГҐГ¬Г»Гµ: ");
+      for (int j=0; j<k; j++){
+         printf("Г‚ГўГҐГ¤ГЁГІГҐ %d ГЇГ Г°Г Г¬ГҐГІГ°: ", j+1); scanf("%lf", &parameters[j]);//Г­ГҐ Г°Г ГЎГ®ГІГ ГҐГІ ГўГўГ®Г¤ Г± ГЎГіГЄГўГ Г¬ГЁ
+      }
+      printf("ГЉГ®Г°Г­ГЁ: ");
+      for (double i=A; i<=B; i+=0.001){
+         if (polynomial(i, parameters,k)==0){ printf("%lf ",polynomial(i, parameters,k)); count++;}
+      }printf("\n");
+      for (double i=A; i<=B; i+=0.001){
+//         if (f_choose(i,a,b,c,d, prg)!=0)
+         {s+=(0.001*0.5*(polynomial(i,parameters,k)+polynomial(i+0.001,parameters,k))); count++;}
+      }printf("%f\n", s);
 
 
-    }
-    return 1;
+   }
 }
 
 
@@ -1042,7 +1013,7 @@ void calc6() {
     do {
         int prg = 0;
         do {
-            prg = char_int("Выберите вариант функции: \n 1 - Cтепенная вида: a*x^b+c \n 2 - Полином степени вида: a0+a1*x+a2*x^2+...+aN*x^N\n 3 - Показательная вида: a*b^(c*x)+b\n 4 - Логарифмическая вида: a*ln(b*x)+c\n 5 - Cинусоида вида: a*sin(b*x+c)+d\n 6 - Косинусоида вида: a*cos(b*x+c)+d \n");
+            prg = char_int("Г‚Г»ГЎГҐГ°ГЁГІГҐ ГўГ Г°ГЁГ Г­ГІ ГґГіГ­ГЄГ¶ГЁГЁ: \n 1 - CГІГҐГЇГҐГ­Г­Г Гї ГўГЁГ¤Г : a*x^b+c \n 2 - ГЏГ®Г«ГЁГ­Г®Г¬ Г±ГІГҐГЇГҐГ­ГЁ ГўГЁГ¤Г : a0+a1*x+a2*x^2+...+aN*x^N\n 3 - ГЏГ®ГЄГ Г§Г ГІГҐГ«ГјГ­Г Гї ГўГЁГ¤Г : a*b^(c*x)+b\n 4 - Г‹Г®ГЈГ Г°ГЁГґГ¬ГЁГ·ГҐГ±ГЄГ Гї ГўГЁГ¤Г : a*ln(b*x)+c\n 5 - CГЁГ­ГіГ±Г®ГЁГ¤Г  ГўГЁГ¤Г : a*sin(b*x+c)+d\n 6 - ГЉГ®Г±ГЁГ­ГіГ±Г®ГЁГ¤Г  ГўГЁГ¤Г : a*cos(b*x+c)+d \n");
             switch (prg) {
             case 1: flag = 1; break;
             case 2: flag = 2; break;
@@ -1050,13 +1021,13 @@ void calc6() {
             case 4: flag = 4; break;
             case 5: flag = 5; break;
             case 6: flag = 6; break;
-            default: printf("Неверно введено значение\n"); break;
+            default: printf("ГЌГҐГўГҐГ°Г­Г® ГўГўГҐГ¤ГҐГ­Г® Г§Г­Г Г·ГҐГ­ГЁГҐ\n"); break;
             }
         } while (prg != 1 && prg != 2 && prg != 3 && prg != 4 && prg != 5 && prg != 6);
 
         int prg1 = 0;
         do {
-            prg1 = char_int("Выберите тип калькулятора: \n 1 - поиск экстремумов на отрезке \n 2 - поиск корня \n 3 - вычисление интеграла 4 - построение графиков\n");
+            prg1 = char_int("Г‚Г»ГЎГҐГ°ГЁГІГҐ ГІГЁГЇ ГЄГ Г«ГјГЄГіГ«ГїГІГ®Г°Г : \n 1 - ГЇГ®ГЁГ±ГЄ ГЅГЄГ±ГІГ°ГҐГ¬ГіГ¬Г®Гў Г­Г  Г®ГІГ°ГҐГ§ГЄГҐ \n 2 - ГЇГ®ГЁГ±ГЄ ГЄГ®Г°Г­Гї \n 3 - ГўГ»Г·ГЁГ±Г«ГҐГ­ГЁГҐ ГЁГ­ГІГҐГЈГ°Г Г«Г  4 - ГЇГ®Г±ГІГ°Г®ГҐГ­ГЁГҐ ГЈГ°Г ГґГЁГЄГ®Гў\n");
             switch (prg1) {
             case 1: extreme(prg); break;
             case 2: root(prg); break;
@@ -1072,10 +1043,10 @@ void calc6() {
             }
             break;
             }
-            default: printf("Неверно введено значение\n"); break;
+            default: printf("ГЌГҐГўГҐГ°Г­Г® ГўГўГҐГ¤ГҐГ­Г® Г§Г­Г Г·ГҐГ­ГЁГҐ\n"); break;
             }
         } while (prg1 != 1 && prg1 != 2 && prg1 != 3);
-        circle = char_int("0 - вернуться в меню;\nлюбое другое целое число - продолжить\n");
+        circle = char_int("0 - ГўГҐГ°Г­ГіГІГјГ±Гї Гў Г¬ГҐГ­Гѕ;\nГ«ГѕГЎГ®ГҐ Г¤Г°ГіГЈГ®ГҐ Г¶ГҐГ«Г®ГҐ Г·ГЁГ±Г«Г® - ГЇГ°Г®Г¤Г®Г«Г¦ГЁГІГј\n");
     } while (circle != 0);
     //return 0;
 }
